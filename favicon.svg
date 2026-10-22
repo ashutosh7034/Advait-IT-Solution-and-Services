@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="faviconGrad" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#155EEF"/>
+      <stop offset="100%" stop-color="#0B1F3A"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="20" y1="36" x2="44" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#155EEF" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <!-- Background squircle -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0B1F3A"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" stroke="url(#faviconGrad)" stroke-width="1.5" stroke-opacity="0.6"/>
+  
+  <!-- Modern Geometric "A" with Tech Nexus -->
+  <g filter="url(#glow)">
+    <!-- Left Stela -->
+    <path d="M18 48L32 14L37 25L26 48H18Z" fill="url(#faviconGrad)"/>
+    <!-- Right Stela -->
+    <path d="M46 48L32 14L38 27L46 48H46Z" fill="#38BDF8"/>
+    <path d="M32 14L46 48H37L32 34L27 48H18L32 14Z" fill="url(#faviconGrad)"/>
+    <!-- Digital Crossbar / Node bridge -->
+    <path d="M22 36H42" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
+    <!-- Apex Pulse Node -->
+    <circle cx="32" cy="14" r="3.5" fill="#60A5FA"/>
+    <circle cx="32" cy="14" r="1.5" fill="#FFFFFF"/>
+    <!-- Crossbar Nodes -->
+    <circle cx="22" cy="36" r="2.5" fill="#60A5FA"/>
+    <circle cx="42" cy="36" r="2.5" fill="#38BDF8"/>
+  </g>
+</svg>
