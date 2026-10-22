@@ -1,0 +1,7 @@
+# robots.txt for Advait IT Solutions and Services
+# Replace https://yourdomain.com with your live deployed domain
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+Sitemap: https://yourdomain.com/sitemap.xml
