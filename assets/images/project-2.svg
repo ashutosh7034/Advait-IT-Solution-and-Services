@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="p2Grad" x1="0" y1="0" x2="600" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#042F2E"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" rx="16" fill="url(#p2Grad)"/>
+  <g transform="translate(40, 35)">
+    <!-- Browser window -->
+    <rect width="520" height="310" rx="12" fill="#0F172A" stroke="#134E4A" stroke-width="1.5"/>
+    <rect width="520" height="36" rx="12" fill="#134E4A"/>
+    <circle cx="24" cy="18" r="4" fill="#EF4444"/>
+    <circle cx="38" cy="18" r="4" fill="#F59E0B"/>
+    <circle cx="52" cy="18" r="4" fill="#10B981"/>
+    <text x="260" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#99F6E4" text-anchor="middle">telemed-connect.care/portal</text>
+    
+    <!-- Doctor Card & Appointment Scheduler -->
+    <rect x="25" y="55" width="220" height="230" rx="10" fill="#115E59" stroke="#14B8A6" stroke-opacity="0.3"/>
+    <circle cx="65" cy="95" r="24" fill="#2DD4BF"/>
+    <text x="105" y="90" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Dr. S. Sharma</text>
+    <text x="105" y="106" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#CCFBF1">General Medicine</text>
+    
+    <rect x="40" y="135" width="190" height="32" rx="6" fill="#0D9488"/>
+    <text x="55" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">10:30 AM — Confirmed</text>
+    
+    <rect x="40" y="180" width="190" height="32" rx="6" fill="#134E4A"/>
+    <text x="55" y="200" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#99F6E4">11:15 AM — Slot Open</text>
+    
+    <!-- Video Consultation Preview (Right) -->
+    <rect x="265" y="55" width="230" height="230" rx="10" fill="#022C22" stroke="#14B8A6" stroke-opacity="0.3"/>
+    <rect x="285" y="75" width="190" height="135" rx="8" fill="#064E3B"/>
+    <circle cx="380" cy="135" r="28" fill="#14B8A6" fill-opacity="0.4"/>
+    <polygon points="375,125 392,135 375,145" fill="#FFFFFF"/>
+    
+    <rect x="305" y="228" width="40" height="40" rx="20" fill="#EF4444"/>
+    <rect x="360" y="228" width="40" height="40" rx="20" fill="#10B981"/>
+    <rect x="415" y="228" width="40" height="40" rx="20" fill="#0D9488"/>
+  </g>
+</svg>
