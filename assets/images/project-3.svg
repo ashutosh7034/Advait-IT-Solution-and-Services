@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="p3Grad" x1="0" y1="0" x2="600" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#311042"/>
+      <stop offset="100%" stop-color="#6B21A8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" rx="16" fill="url(#p3Grad)"/>
+  <g transform="translate(40, 35)">
+    <rect width="520" height="310" rx="12" fill="#0F172A" stroke="#581C87" stroke-width="1.5"/>
+    <rect width="520" height="36" rx="12" fill="#3B0764"/>
+    <circle cx="24" cy="18" r="4" fill="#EF4444"/>
+    <circle cx="38" cy="18" r="4" fill="#F59E0B"/>
+    <circle cx="52" cy="18" r="4" fill="#10B981"/>
+    <text x="260" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#E9D5FF" text-anchor="middle">store-engine.direct/shop</text>
+    
+    <!-- Hero Banner inside app -->
+    <rect x="25" y="52" width="470" height="85" rx="8" fill="#581C87"/>
+    <text x="45" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">High-Velocity Inventory &amp; Checkout</text>
+    <text x="45" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" fill="#D8B4FE">Instant Payment Gateway Integration (Razorpay, Stripe &amp; UPI)</text>
+
+    <!-- Product Grid -->
+    <rect x="25" y="150" width="145" height="135" rx="8" fill="#1E1B4B" stroke="#4C1D95"/>
+    <rect x="40" y="165" width="115" height="60" rx="6" fill="#312E81"/>
+    <text x="40" y="245" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Smart Catalog Item</text>
+    <text x="40" y="265" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#A855F7">In Stock (142)</text>
+
+    <rect x="185" y="150" width="145" height="135" rx="8" fill="#1E1B4B" stroke="#4C1D95"/>
+    <rect x="200" y="165" width="115" height="60" rx="6" fill="#312E81"/>
+    <text x="200" y="245" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Express Delivery SKU</text>
+    <text x="200" y="265" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#A855F7">In Stock (89)</text>
+
+    <rect x="345" y="150" width="150" height="135" rx="8" fill="#1E1B4B" stroke="#4C1D95"/>
+    <text x="360" y="175" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#E9D5FF">Cart Summary</text>
+    <line x1="360" y1="188" x2="475" y2="188" stroke="#3730A3"/>
+    <text x="360" y="210" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#C4B5FD">Subtotal: Verified</text>
+    <text x="360" y="230" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#10B981">SSL 256-bit Secure</text>
+    <rect x="360" y="245" width="115" height="26" rx="5" fill="#9333EA"/>
+    <text x="417" y="262" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Checkout</text>
+  </g>
+</svg>
