@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="p5Grad" x1="0" y1="0" x2="600" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" rx="16" fill="url(#p5Grad)"/>
+  <g transform="translate(40, 35)">
+    <rect width="520" height="310" rx="12" fill="#020617" stroke="#334155" stroke-width="1.5"/>
+    <rect width="520" height="36" rx="12" fill="#0F172A"/>
+    <circle cx="24" cy="18" r="4" fill="#EF4444"/>
+    <circle cx="38" cy="18" r="4" fill="#F59E0B"/>
+    <circle cx="52" cy="18" r="4" fill="#10B981"/>
+    <text x="260" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">finanalytics-core.ledger/invoices</text>
+
+    <!-- Top Key Metrics Cards -->
+    <rect x="25" y="52" width="145" height="65" rx="8" fill="#0F172A" stroke="#1E293B"/>
+    <text x="35" y="72" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#64748B">Monthly Invoiced</text>
+    <text x="35" y="96" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#38BDF8">Reconciled</text>
+
+    <rect x="185" y="52" width="145" height="65" rx="8" fill="#0F172A" stroke="#1E293B"/>
+    <text x="195" y="72" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#64748B">Audit Trail Status</text>
+    <text x="195" y="96" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#10B981">Compliant</text>
+
+    <rect x="345" y="52" width="150" height="65" rx="8" fill="#0F172A" stroke="#1E293B"/>
+    <text x="355" y="72" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#64748B">Tax Computation</text>
+    <text x="355" y="96" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#F59E0B">Automated</text>
+
+    <!-- Bar Chart Breakdown -->
+    <rect x="25" y="130" width="470" height="155" rx="8" fill="#0B132B" stroke="#1E293B"/>
+    <text x="40" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#E2E8F0">Cash Flow &amp; Accounts Ledger</text>
+    
+    <g transform="translate(60, 260)">
+      <!-- Bars -->
+      <rect x="0" y="-80" width="28" height="80" rx="4" fill="#155EEF"/>
+      <rect x="45" y="-105" width="28" height="105" rx="4" fill="#38BDF8"/>
+      <rect x="90" y="-70" width="28" height="70" rx="4" fill="#155EEF"/>
+      <rect x="135" y="-120" width="28" height="120" rx="4" fill="#10B981"/>
+      <rect x="180" y="-95" width="28" height="95" rx="4" fill="#38BDF8"/>
+      <rect x="225" y="-110" width="28" height="110" rx="4" fill="#155EEF"/>
+      <rect x="270" y="-130" width="28" height="130" rx="4" fill="#10B981"/>
+      <rect x="315" y="-115" width="28" height="115" rx="4" fill="#38BDF8"/>
+      <rect x="360" y="-140" width="28" height="140" rx="4" fill="#10B981"/>
+    </g>
+  </g>
+</svg>
