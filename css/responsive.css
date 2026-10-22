@@ -1,0 +1,477 @@
+/* ==========================================================================
+   Advait IT Solutions and Services — Responsive Breakpoints & Mobile Navigation
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Desktop & Large Screens (max-width: 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .process-timeline {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablets Landscape & Laptops (max-width: 1024px)
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Tablets Landscape & Laptops (max-width: 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  :root {
+    --navbar-height: 70px;
+  }
+
+  .site-header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #FFFFFF !important;
+  }
+
+  .announcement-contacts {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-actions .btn {
+    display: none; /* Mobile CTA inside menu drawer */
+  }
+
+  /* Mobile & Tablet Navigation Drawer */
+  .nav-menu {
+    position: fixed;
+    top: calc(var(--announcement-height) + var(--navbar-height));
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--announcement-height) - var(--navbar-height));
+    background: #FFFFFF;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    overflow-y: auto;
+    border-top: 1px solid var(--color-border);
+    box-shadow: var(--shadow-xl);
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    z-index: 999;
+  }
+
+  .nav-menu.is-open {
+    transform: translateX(0);
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1.05rem;
+    justify-content: space-between;
+  }
+
+  /* Dropdown inside Mobile/Tablet Drawer */
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid var(--color-border);
+    margin-top: 8px;
+    transform: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    padding: 12px;
+  }
+
+  .nav-item.dropdown.is-open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-menu .mobile-nav-cta {
+    display: block !important;
+    width: 100%;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav-menu .mobile-nav-cta .btn {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .hero-badge,
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .hero-status {
+    width: min(100%, 520px);
+    justify-self: center;
+  }
+
+  .hero-status .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+    gap: 16px;
+  }
+
+  .hero-status .stat-item {
+    border: 0;
+    padding: 0 12px 0 0;
+  }
+
+  .hero-status .stat-item:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .company-snapshot {
+    max-width: 460px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+    padding: 10px 0;
+  }
+
+  .company-snapshot-heading {
+    text-align: center;
+  }
+
+  .company-snapshot .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .company-snapshot .stat-item,
+  .company-snapshot .stat-item:first-child,
+  .company-snapshot .stat-item:last-child {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    column-gap: 12px;
+    padding: 14px 0;
+    border: 0;
+  }
+
+  .company-snapshot .stat-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .company-snapshot .stat-item:first-child {
+    padding-top: 0;
+  }
+
+  .company-snapshot .stat-icon {
+    margin-bottom: 0;
+    padding-top: 4px;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-choose-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .process-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .advantage-deep-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .client-rights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+    grid-column: span 2;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablets Portrait & Mobile Devices (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --announcement-height: 64px;
+    --navbar-height: 68px;
+  }
+
+  .section {
+    padding: 52px 0;
+  }
+
+  .hero-section {
+    min-height: 0;
+    padding: 38px 0 56px;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(90deg, rgba(7, 21, 39, 0.9), rgba(7, 21, 39, 0.68)),
+      linear-gradient(180deg, rgba(7, 21, 39, 0.18), rgba(7, 21, 39, 0.58));
+  }
+
+  .hero-slide {
+    background-position: 78% center;
+  }
+
+  /* Grid Adjustments */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .client-rights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 12px 14px;
+    font-size: 0.88rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-timeline {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .process-step {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .process-number {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .cta-banner {
+    padding: 44px 24px;
+  }
+
+  .contact-card {
+    padding: 24px 18px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-brand {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+
+  /* Components Responsive */
+  .service-detail-card {
+    padding: 26px 20px;
+  }
+
+  .service-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .about-mission-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .privacy-card {
+    padding: 26px 18px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Small Mobile Phones (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  :root {
+    --announcement-height: 72px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .brand-logo-img {
+    height: 49px;
+  }
+
+  .cta-banner-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .cta-banner-actions .btn {
+    width: 100%;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industries-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .announcement-inner {
+    font-size: 0.78rem;
+  }
+
+  .scroll-top-btn {
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .toast-container {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .hero-status .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hero-status .stat-item {
+    border: 0;
+    padding: 0 0 14px 0;
+  }
+
+  .hero-status .stat-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .toast {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --announcement-height: 96px;
+  }
+}
