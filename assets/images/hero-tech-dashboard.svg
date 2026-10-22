@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="300" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#155EEF" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="codeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B1F3A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="lineGrad1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#155EEF"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0B1F3A" flood-opacity="0.10"/>
+    </filter>
+    <filter id="floatShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#155EEF" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Background decorative tech circles & grid -->
+  <circle cx="480" cy="140" r="160" fill="url(#blueGlow)" filter="blur(20px)"/>
+  <circle cx="160" cy="360" r="140" fill="url(#blueGlow)" filter="blur(25px)"/>
+  
+  <g opacity="0.35" stroke="#CBD5E1" stroke-dasharray="3 3">
+    <line x1="80" y1="60" x2="560" y2="60"/>
+    <line x1="80" y1="180" x2="560" y2="180"/>
+    <line x1="80" y1="300" x2="560" y2="300"/>
+    <line x1="80" y1="420" x2="560" y2="420"/>
+    <line x1="160" y1="40" x2="160" y2="440"/>
+    <line x1="320" y1="40" x2="320" y2="440"/>
+    <line x1="480" y1="40" x2="480" y2="440"/>
+  </g>
+
+  <!-- Connecting Data Stream Lines -->
+  <path d="M120 220 C 200 180, 260 260, 350 200 C 440 140, 500 240, 560 210" stroke="url(#lineGrad1)" stroke-width="2.5" fill="none" opacity="0.8"/>
+  <circle cx="350" cy="200" r="4" fill="#38BDF8"/>
+  <circle cx="260" cy="225" r="3" fill="#155EEF"/>
+  <circle cx="470" cy="190" r="3" fill="#10B981"/>
+
+  <!-- Main IDE / Code Window (Center Left) -->
+  <g filter="url(#cardShadow)">
+    <rect x="70" y="70" width="360" height="250" rx="14" fill="url(#codeGrad)" stroke="#334155" stroke-width="1.2"/>
+    
+    <!-- Window Bar -->
+    <rect x="70" y="70" width="360" height="34" rx="14" fill="#0F172A"/>
+    <path d="M70 94H430" stroke="#1E293B" stroke-width="1"/>
+    <!-- Window Dots -->
+    <circle cx="92" cy="87" r="4" fill="#EF4444"/>
+    <circle cx="106" cy="87" r="4" fill="#F59E0B"/>
+    <circle cx="120" cy="87" r="4" fill="#10B981"/>
+    <text x="210" y="91" font-family="'Plus Jakarta Sans', monospace" font-size="10.5" fill="#94A3B8" font-weight="500">advait-architecture.ts</text>
+
+    <!-- Code Editor Content -->
+    <text x="94" y="126" font-family="'Plus Jakarta Sans', monospace" font-size="11" fill="#38BDF8">import { <tspan fill="#F59E0B">ClientSolution</tspan> } from <tspan fill="#34D399">'@advait/core'</tspan>;</text>
+    <text x="94" y="148" font-family="'Plus Jakarta Sans', monospace" font-size="11" fill="#64748B">// Optimized Enterprise Architecture</text>
+    <text x="94" y="170" font-family="'Plus Jakarta Sans', monospace" font-size="11" fill="#93C5FD">export class <tspan fill="#FBBF24">AdvaitPlatform</tspan> {</text>
+    <text x="110" y="192" font-family="'Plus Jakarta Sans', monospace" font-size="11" fill="#E2E8F0">  readonly status = <tspan fill="#34D399">'PRODUCTION_READY'</tspan>;</text>
+    <text x="110" y="214" font-family="'Plus Jakarta Sans', monospace" font-size="11" fill="#E2E8F0">  readonly security = <tspan fill="#60A5FA">new HTTPSecurityShield()</tspan>;</text>
+    <text x="110" y="236" font-family="'Plus Jakarta Sans', monospace" font-size="11" fill="#E2E8F0">  async deploy(): Promise&lt;<tspan fill="#38BDF8">Success</tspan>&gt; {</text>
+    <text x="126" y="258" font-family="'Plus Jakarta Sans', monospace" font-size="11" fill="#A855F7">    return await this.launch();</text>
+    <text x="110" y="280" font-family="'Plus Jakarta Sans', monospace" font-size="11" fill="#E2E8F0">  }</text>
+    <text x="94" y="302" font-family="'Plus Jakarta Sans', monospace" font-size="11" fill="#93C5FD">}</text>
+  </g>
+
+  <!-- Floating Analytics Card (Top Right) -->
+  <g filter="url(#floatShadow)">
+    <rect x="360" y="45" width="220" height="150" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="382" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B1F3A">Deployment Performance</text>
+    <rect x="382" y="86" width="60" height="6" rx="3" fill="#10B981"/>
+    
+    <text x="382" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="800" fill="#155EEF">99.98%</text>
+    <text x="468" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="600" fill="#10B981">Uptime SLA</text>
+    
+    <path d="M382 165 C 410 145, 430 160, 460 135 C 490 150, 520 130, 550 140" stroke="#155EEF" stroke-width="2.2" fill="none"/>
+    <path d="M382 165 C 410 145, 430 160, 460 135 C 490 150, 520 130, 550 140 L 550 178 L 382 178 Z" fill="#EFF6FF" opacity="0.6"/>
+  </g>
+
+  <!-- Floating Active Services Card (Bottom Right) -->
+  <g filter="url(#cardShadow)">
+    <rect x="320" y="240" width="260" height="175" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="340" y="270" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B1F3A">Core IT Capabilities</text>
+    
+    <!-- Item 1 -->
+    <circle cx="352" cy="298" r="10" fill="#EFF6FF"/>
+    <path d="M349 298L351 300L356 295" stroke="#155EEF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="372" y="298" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="600" fill="#1E293B">Custom Web &amp; Apps</text>
+    <text x="372" y="309" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#64748B">Tailored Scalable Code</text>
+
+    <!-- Item 2 -->
+    <circle cx="352" cy="336" r="10" fill="#EFF6FF"/>
+    <path d="M349 336L351 338L356 333" stroke="#155EEF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="372" y="336" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="600" fill="#1E293B">Cloud &amp; Server Setup</text>
+    <text x="372" y="347" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#64748B">CI/CD &amp; DNS Deployment</text>
+
+    <!-- Item 3 -->
+    <circle cx="352" cy="374" r="10" fill="#EFF6FF"/>
+    <path d="M349 374L351 376L356 371" stroke="#155EEF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="372" y="374" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="600" fill="#1E293B">Testing &amp; Maintenance</text>
+    <text x="372" y="385" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#64748B">Long-term Client Support</text>
+  </g>
+
+  <!-- Small Floating Status Badge (Bottom Left) -->
+  <g filter="url(#floatShadow)">
+    <rect x="90" y="340" width="180" height="52" rx="12" fill="#0B1F3A" stroke="#1E293B" stroke-width="1"/>
+    <circle cx="112" cy="366" r="5" fill="#10B981"/>
+    <circle cx="112" cy="366" r="9" stroke="#10B981" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text x="128" y="362" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Advait Tech Stack</text>
+    <text x="128" y="376" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" fill="#94A3B8">20+ Live Projects Delivered</text>
+  </g>
+</svg>
