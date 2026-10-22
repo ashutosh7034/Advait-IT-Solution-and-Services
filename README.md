@@ -10,8 +10,9 @@ Built using clean, semantic **HTML5**, modern **CSS3** (with design tokens, cust
 
 ```
 advait-it-solutions/
-├── index.html              # Homepage (Hero, Stats, Trust, 6 Core Services, 7-Step Process, FAQ, CTA)
+├── index.html              # Homepage (Hero, Stats, 6 Core Services, Advait Advantage Preview, 4-Stage Process, FAQ, CTA)
 ├── about.html              # About Us (Story, Mission, Vision, Verified Scale, Leadership Profiles)
+├── advait-advantage.html   # The Advait Advantage (Agency vs Freelancer Comparison Matrix, 4 Pillars, Client Rights)
 ├── services.html           # Full Services Page (All 14 detailed IT service categories + Quick Jump Nav)
 ├── projects.html           # Portfolio Showcase (Search bar, Category Filters, Accessible Detail Modal)
 ├── contact.html            # Contact & Quotations (Formspree Form, 2 WhatsApp buttons, Direct Email)
