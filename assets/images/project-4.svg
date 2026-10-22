@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="p4Grad" x1="0" y1="0" x2="600" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#3730A3"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" rx="16" fill="url(#p4Grad)"/>
+  <g transform="translate(40, 35)">
+    <rect width="520" height="310" rx="12" fill="#0F172A" stroke="#312E81" stroke-width="1.5"/>
+    <rect width="520" height="36" rx="12" fill="#1E1B4B"/>
+    <circle cx="24" cy="18" r="4" fill="#EF4444"/>
+    <circle cx="38" cy="18" r="4" fill="#F59E0B"/>
+    <circle cx="52" cy="18" r="4" fill="#10B981"/>
+    <text x="260" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#C7D2FE" text-anchor="middle">edulearn-portal.institute/modules</text>
+
+    <!-- Course Modules & Progress -->
+    <rect x="25" y="55" width="310" height="110" rx="8" fill="#1E293B" stroke="#3730A3"/>
+    <text x="40" y="80" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Module 4: Full Stack Architecture</text>
+    <text x="40" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#94A3B8">Interactive video lectures, code sandbox, and quizzes</text>
+    <rect x="40" y="118" width="280" height="8" rx="4" fill="#334155"/>
+    <rect x="40" y="118" width="210" height="8" rx="4" fill="#6366F1"/>
+    <text x="40" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#818CF8">Progress: 75% Completed</text>
+
+    <!-- Quiz & Assessment Widget -->
+    <rect x="25" y="180" width="310" height="105" rx="8" fill="#1E293B" stroke="#3730A3"/>
+    <text x="40" y="205" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Live Student Assessment</text>
+    <circle cx="55" cy="235" r="12" fill="#10B981"/>
+    <text x="75" y="238" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" fill="#E2E8F0">Automated Grading Active</text>
+    <rect x="40" y="255" width="100" height="20" rx="4" fill="#4338CA"/>
+    <text x="90" y="268" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" fill="#FFFFFF" text-anchor="middle">View Scorecard</text>
+
+    <!-- Leaderboard / Stats Panel -->
+    <rect x="350" y="55" width="145" height="230" rx="8" fill="#181E34" stroke="#3730A3"/>
+    <text x="365" y="80" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="700" fill="#C7D2FE">Cohort Activity</text>
+    <circle cx="380" cy="115" r="14" fill="#4F46E5"/>
+    <text x="402" y="118" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#FFFFFF">Batch A (48)</text>
+    <circle cx="380" cy="155" r="14" fill="#059669"/>
+    <text x="402" y="158" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#FFFFFF">Batch B (54)</text>
+    <circle cx="380" cy="195" r="14" fill="#D97706"/>
+    <text x="402" y="198" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#FFFFFF">Batch C (39)</text>
+  </g>
+</svg>
