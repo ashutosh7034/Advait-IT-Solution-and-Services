@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="p1Grad" x1="0" y1="0" x2="600" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B1F3A"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" rx="16" fill="url(#p1Grad)"/>
+  <!-- UI Window Container -->
+  <g transform="translate(40, 35)">
+    <rect width="520" height="310" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+    <rect width="520" height="36" rx="12" fill="#1E293B"/>
+    <circle cx="24" cy="18" r="4" fill="#EF4444"/>
+    <circle cx="38" cy="18" r="4" fill="#F59E0B"/>
+    <circle cx="52" cy="18" r="4" fill="#10B981"/>
+    <text x="260" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">enterprise-portal.internal.app</text>
+    
+    <!-- Sidebar -->
+    <rect x="0" y="36" width="110" height="274" fill="#131F37"/>
+    <rect x="15" y="55" width="80" height="12" rx="4" fill="#1E3A8A"/>
+    <rect x="15" y="78" width="70" height="10" rx="3" fill="#334155"/>
+    <rect x="15" y="98" width="65" height="10" rx="3" fill="#334155"/>
+    <rect x="15" y="118" width="75" height="10" rx="3" fill="#334155"/>
+
+    <!-- Dashboard Content -->
+    <!-- Top Stat Widgets -->
+    <rect x="125" y="52" width="115" height="55" rx="8" fill="#1E293B" stroke="#334155"/>
+    <text x="135" y="72" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94A3B8">Active Workflows</text>
+    <text x="135" y="94" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#38BDF8">1,482</text>
+
+    <rect x="250" y="52" width="115" height="55" rx="8" fill="#1E293B" stroke="#334155"/>
+    <text x="260" y="72" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94A3B8">API Response</text>
+    <text x="260" y="94" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#10B981">42 ms</text>
+
+    <rect x="375" y="52" width="130" height="55" rx="8" fill="#1E293B" stroke="#334155"/>
+    <text x="385" y="72" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94A3B8">Sync Reliability</text>
+    <text x="385" y="94" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#60A5FA">99.9%</text>
+
+    <!-- Main Chart Panel -->
+    <rect x="125" y="120" width="380" height="165" rx="8" fill="#1A2640" stroke="#334155"/>
+    <path d="M140 230 C 180 200, 230 240, 290 170 C 350 210, 420 150, 485 140" stroke="#155EEF" stroke-width="3" fill="none"/>
+    <path d="M140 230 C 180 200, 230 240, 290 170 C 350 210, 420 150, 485 140 L 485 260 L 140 260 Z" fill="#155EEF" fill-opacity="0.15"/>
+    <circle cx="290" cy="170" r="5" fill="#38BDF8"/>
+    <circle cx="485" cy="140" r="5" fill="#10B981"/>
+  </g>
+</svg>
