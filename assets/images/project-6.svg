@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="p6Grad" x1="0" y1="0" x2="600" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0C4A6E"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" rx="16" fill="url(#p6Grad)"/>
+  <g transform="translate(40, 35)">
+    <rect width="520" height="310" rx="12" fill="#0F172A" stroke="#0369A1" stroke-width="1.5"/>
+    <rect width="520" height="36" rx="12" fill="#0C4A6E"/>
+    <circle cx="24" cy="18" r="4" fill="#EF4444"/>
+    <circle cx="38" cy="18" r="4" fill="#F59E0B"/>
+    <circle cx="52" cy="18" r="4" fill="#10B981"/>
+    <text x="260" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#BAE6FD" text-anchor="middle">fleetflow-map.telematics/live</text>
+
+    <!-- Map Route View -->
+    <rect x="25" y="52" width="310" height="230" rx="8" fill="#075985" stroke="#0284C7"/>
+    <!-- Map Grid lines -->
+    <line x1="25" y1="120" x2="335" y2="120" stroke="#0369A1" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="25" y1="180" x2="335" y2="180" stroke="#0369A1" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="120" y1="52" x2="120" y2="282" stroke="#0369A1" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="220" y1="52" x2="220" y2="282" stroke="#0369A1" stroke-width="1" stroke-dasharray="3 3"/>
+
+    <!-- Route Line -->
+    <path d="M50 220 L 110 170 L 190 190 L 260 100 L 300 90" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <circle cx="50" cy="220" r="6" fill="#10B981"/>
+    <circle cx="110" cy="170" r="5" fill="#38BDF8"/>
+    <circle cx="190" cy="190" r="5" fill="#38BDF8"/>
+    <circle cx="300" cy="90" r="7" fill="#F59E0B"/>
+    <text x="50" y="245" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#E0F2FE">Origin Hub</text>
+    <text x="270" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#FEF08A">Destination</text>
+
+    <!-- Dispatch & Telematics Panel -->
+    <rect x="350" y="52" width="145" height="230" rx="8" fill="#082F49" stroke="#0369A1"/>
+    <text x="365" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#E0F2FE">Fleet Metrics</text>
+    
+    <rect x="365" y="90" width="115" height="42" rx="6" fill="#0C4A6E"/>
+    <text x="375" y="106" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#BAE6FD">Active Vehicles</text>
+    <text x="375" y="123" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#38BDF8">48 En Route</text>
+
+    <rect x="365" y="142" width="115" height="42" rx="6" fill="#0C4A6E"/>
+    <text x="375" y="158" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#BAE6FD">On-Time Rate</text>
+    <text x="375" y="175" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#10B981">98.4%</text>
+
+    <rect x="365" y="195" width="115" height="65" rx="6" fill="#0C4A6E"/>
+    <text x="375" y="212" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#BAE6FD">GPS Signal</text>
+    <text x="375" y="228" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="600" fill="#F8FAFC">Low Latency</text>
+    <text x="375" y="244" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#7DD3FC">Telemetry active</text>
+  </g>
+</svg>
