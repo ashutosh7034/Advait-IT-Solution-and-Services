@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#040a16"/><stop offset=".5" stop-color="#0c2445"/><stop offset="1" stop-color="#182d5b"/></linearGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173e6b"/><stop offset="1" stop-color="#071426"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g stroke="#38bdf8" stroke-width="5" fill="none" opacity=".55">
+    <path d="M760 190h180v100h130v-80h190M760 700h170V560h180v190h250M1380 200v180h140M1450 700V540h100"/>
+    <path d="M820 330H700v-90h-80M850 470H650v130H520M1100 720v-90h140"/>
+  </g>
+  <g fill="#67e8f9"><circle cx="940" cy="190" r="9"/><circle cx="1070" cy="290" r="9"/><circle cx="1260" cy="210" r="9"/><circle cx="930" cy="700" r="9"/><circle cx="1110" cy="750" r="9"/><circle cx="1380" cy="380" r="9"/></g>
+  <rect x="900" y="290" width="400" height="310" rx="34" fill="url(#chip)" stroke="#a5f3fc" stroke-width="8"/>
+  <rect x="980" y="370" width="240" height="150" rx="18" fill="#0b1f3a" stroke="#38bdf8" stroke-width="5"/>
+  <g stroke="#67e8f9" stroke-width="8"><path d="M950 250v55M1010 250v55M1070 250v55M1130 250v55M1190 250v55M1250 250v55M950 575v55M1010 575v55M1070 575v55M1130 575v55M1190 575v55M1250 575v55"/></g>
+  <circle cx="1100" cy="445" r="45" fill="none" stroke="#a5f3fc" stroke-width="7"/>
+</svg>
