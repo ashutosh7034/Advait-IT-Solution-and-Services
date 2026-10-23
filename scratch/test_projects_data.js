@@ -34,12 +34,20 @@ global.window = {
   matchMedia: () => ({ matches: false })
 };
 
+const vm = require('vm');
+
 try {
-  // Load projects-data.js
+  // Load projects-data.js in sandbox context
   const code = fs.readFileSync('js/projects-data.js', 'utf8');
-  eval(code);
+  const context = vm.createContext({
+    document: global.document,
+    window: global.window,
+    console: console,
+    ADVAIT_PROJECTS: undefined
+  });
+  const projects = vm.runInContext(code + '\n;ADVAIT_PROJECTS;', context);
   console.log('PASS: js/projects-data.js executed with 0 syntax or runtime errors!');
-  console.log('Total projects loaded:', ADVAIT_PROJECTS.length);
+  console.log('Total projects loaded:', projects.length);
 } catch (err) {
   console.error('FAIL: Error executing projects-data.js:', err);
   process.exit(1);

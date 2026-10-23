@@ -77,25 +77,13 @@ npx serve .
 ## ⚙️ Configuration Details to Update Before Going Live
 
 ### 1. Formspree Contact Form Endpoint
-To receive form inquiries directly into your inbox:
-1. Create a free account at [Formspree.io](https://formspree.io/).
-2. Create a new form and copy your unique Form ID (e.g., `xpzgkdaw`).
-3. Update the Form ID in **two files**:
-   - In `contact.html` (line 125):
-     ```html
-     <form id="advaitContactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-     ```
-     Replace `YOUR_FORMSPREE_ID` with your Formspree ID.
-   - In `js/form-validation.js` (line 9):
-     ```javascript
-     const FORMSPREE_FORM_ID = 'YOUR_FORMSPREE_ID';
-     ```
-     Replace `'YOUR_FORMSPREE_ID'` with your Formspree ID.
-
-> **Note:** If the form is submitted while the placeholder `YOUR_FORMSPREE_ID` is present, the website will display a helpful reminder banner with one-click direct WhatsApp and Email fallbacks so you never miss an inquiry.
+The contact form is pre-configured and integrated with Formspree form ID **`xoeeagyl`**:
+- **Form Action:** `https://formspree.io/f/xoeeagyl`
+- **Validation Script:** Integrated in `js/form-validation.js` with client validation, honeypot spam protection (`_gotcha`), and accessible ARIA alert messaging.
+- **Recipient Action Required:** The account owner must confirm that the Formspree dashboard routing destination is set to **`ashutosh3276s16@gmail.com`**.
 
 ### 2. Configure Your Live Domain Name & Canonical URLs
-Search and replace `https://yourdomain.com` with your actual domain name (e.g., `https://advaititsolutions.com`) across:
+When a custom live domain is finalized, replace placeholder references (`https://yourdomain.com`) across:
 - `index.html` (canonical, Open Graph, Twitter card, Schema JSON-LD)
 - `about.html` (canonical, Open Graph)
 - `services.html` (canonical, Open Graph)
@@ -107,7 +95,7 @@ Search and replace `https://yourdomain.com` with your actual domain name (e.g., 
 
 ### 3. Contact & WhatsApp Numbers
 All verified contact options are configured throughout the pages:
-- **Email:** `akp2756097@gmail.com`
+- **Official Email:** `ashutosh3276s16@gmail.com`
 - **WhatsApp 1:** `+91 9702420582` (Pre-linked with project inquiry text)
 - **WhatsApp 2:** `+91 6391929317` (Pre-linked with technical services text)
 
@@ -185,7 +173,7 @@ The search filtering, category tabs, and modal preview will automatically update
 - **Company:** Advait IT Solutions and Services
 - **Founder & Head:** Ashutosh Pandey
 - **Technical Lead & SDE:** Aakash Pandey
-- **Office Email:** akp2756097@gmail.com
+- **Office Email:** ashutosh3276s16@gmail.com
 - **WhatsApp 1:** +91 9702420582
 - **WhatsApp 2:** +91 6391929317
 #   A d v a i t - I T - S o l u t i o n - a n d - S e r v i c e s  

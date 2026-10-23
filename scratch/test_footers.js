@@ -11,7 +11,7 @@ files.forEach(f => {
   }
   const footerContent = footerMatch[1];
   const links = (footerContent.match(/href=["']([^"']+)["']/g) || []).map(l => l.replace(/href=["']|["']/g, ''));
-  const hasEmail = footerContent.includes('akp2756097@gmail.com');
+  const hasEmail = footerContent.includes('ashutosh3276s16@gmail.com');
   const hasWa1 = footerContent.includes('9702420582');
   const hasWa2 = footerContent.includes('6391929317');
   const hasYear = footerContent.includes('dynamic-year');
