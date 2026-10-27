@@ -19,9 +19,14 @@
     const slides = Array.from(document.querySelectorAll('.hero-slide'));
     if (!slider || slides.length < 2) return;
 
+    // Preload all background images to eliminate blank flashes during rotation
     slides.forEach(slide => {
       const image = slide.getAttribute('data-image');
-      if (image) slide.style.backgroundImage = `url("${image}")`;
+      if (image) {
+        const preloadImg = new Image();
+        preloadImg.src = image;
+        slide.style.backgroundImage = `url("${image}")`;
+      }
     });
 
     let activeIndex = 0;
@@ -45,13 +50,12 @@
     const startTimer = () => {
       if (reducedMotion || document.hidden) return;
       stopTimer();
-      timer = window.setInterval(() => showSlide(activeIndex + 1), 4000);
+      timer = window.setInterval(() => {
+        showSlide(activeIndex + 1);
+      }, 4000);
     };
 
-    slider.addEventListener('mouseenter', stopTimer);
-    slider.addEventListener('mouseleave', startTimer);
-    slider.addEventListener('focusin', stopTimer);
-    slider.addEventListener('focusout', startTimer);
+    // Pause when the page is not visible, resume when user returns
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) stopTimer();
       else startTimer();
