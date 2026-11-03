@@ -85,6 +85,12 @@
       form.reset();
       clearValidationErrors(form);
 
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'contact_form_submit',
+        form_name: 'project_inquiry'
+      });
+
       if (alertError) {
         alertError.style.display = 'none';
       }
