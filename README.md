@@ -93,23 +93,18 @@ The production domain is configured as `https://advaititsolutions.com` across:
 - `robots.txt` (`Sitemap: https://advaititsolutions.com/sitemap.xml`)
 - `sitemap.xml` (all `<loc>` URLs)
 
-### 3. Google Analytics 4 via Google Tag Manager
-All pages load the existing Google Tag Manager container `GTM-WR45JTS8`. No direct
-`gtag.js` snippet is included, which prevents duplicate GA4 installations and
-duplicate `page_view` events.
-
-In the GTM workspace, create and publish one GA4 Google tag:
-1. Choose **Google tag** (or the equivalent GA4 Configuration tag).
-2. Set the Tag ID / Measurement ID to `G-MNV8W0JCC7`.
-3. Use the **Initialization - All Pages** trigger.
-4. Keep automatic page views enabled on this single tag.
+### 3. Google Analytics 4
+All HTML pages load the single official Google Analytics tag for
+Measurement ID `G-MNV8W0JCC7`. The former Google Tag Manager container was
+removed to prevent duplicate analytics installations and duplicate `page_view`
+events.
 
 The global `js/main.js` script sends privacy-safe `dataLayer` events for
 `cta_click`, `phone_click`, `email_click`, and `whatsapp_click`. Successful
 contact submissions send `contact_form_submit` from `js/form-validation.js`.
-Create matching Custom Event triggers/tags in GTM if these events should appear
-as GA4 events. No names, email addresses, phone numbers, or form contents are
-sent to Google Analytics.
+Configure matching GA4 event tags only if these custom events need to be
+registered as conversions. No names, email addresses, phone numbers, or form
+contents are sent to Google Analytics.
 
 ### 4. Contact & WhatsApp Numbers
 All verified contact options are configured throughout the pages:

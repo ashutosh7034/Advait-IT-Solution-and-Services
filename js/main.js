@@ -158,8 +158,7 @@
   }
 
   /**
-   * Pushes privacy-safe interaction events to the existing global GTM dataLayer.
-   * GA4 configuration and event tags are managed in GTM, not in page markup.
+   * Pushes privacy-safe interaction events to the global GA4 dataLayer.
    */
   function initAnalyticsEvents() {
     window.dataLayer = window.dataLayer || [];
