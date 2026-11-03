@@ -82,18 +82,36 @@ The contact form is pre-configured and integrated with Formspree form ID **`xoee
 - **Validation Script:** Integrated in `js/form-validation.js` with client validation, honeypot spam protection (`_gotcha`), and accessible ARIA alert messaging.
 - **Recipient Action Required:** The account owner must confirm that the Formspree dashboard routing destination is set to **`ashutosh3276s16@gmail.com`**.
 
-### 2. Configure Your Live Domain Name & Canonical URLs
-When a custom live domain is finalized, replace placeholder references (`https://yourdomain.com`) across:
+### 2. Production Domain and Canonical URLs
+The production domain is configured as `https://advaititsolutions.com` across:
 - `index.html` (canonical, Open Graph, Twitter card, Schema JSON-LD)
 - `about.html` (canonical, Open Graph)
 - `services.html` (canonical, Open Graph)
 - `projects.html` (canonical, Open Graph)
 - `contact.html` (canonical, Open Graph)
 - `privacy-policy.html` (canonical)
-- `robots.txt` (`Sitemap: https://yourdomain.com/sitemap.xml`)
+- `robots.txt` (`Sitemap: https://advaititsolutions.com/sitemap.xml`)
 - `sitemap.xml` (all `<loc>` URLs)
 
-### 3. Contact & WhatsApp Numbers
+### 3. Google Analytics 4 via Google Tag Manager
+All pages load the existing Google Tag Manager container `GTM-WR45JTS8`. No direct
+`gtag.js` snippet is included, which prevents duplicate GA4 installations and
+duplicate `page_view` events.
+
+In the GTM workspace, create and publish one GA4 Google tag:
+1. Choose **Google tag** (or the equivalent GA4 Configuration tag).
+2. Set the Tag ID / Measurement ID to `G-MNV8W0JCC7`.
+3. Use the **Initialization - All Pages** trigger.
+4. Keep automatic page views enabled on this single tag.
+
+The global `js/main.js` script sends privacy-safe `dataLayer` events for
+`cta_click`, `phone_click`, `email_click`, and `whatsapp_click`. Successful
+contact submissions send `contact_form_submit` from `js/form-validation.js`.
+Create matching Custom Event triggers/tags in GTM if these events should appear
+as GA4 events. No names, email addresses, phone numbers, or form contents are
+sent to Google Analytics.
+
+### 4. Contact & WhatsApp Numbers
 All verified contact options are configured throughout the pages:
 - **Official Email:** `ashutosh3276s16@gmail.com`
 - **WhatsApp 1:** `+91 9702420582` (Pre-linked with project inquiry text)
