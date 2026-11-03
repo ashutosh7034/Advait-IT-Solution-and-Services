@@ -101,6 +101,19 @@ body {
   min-height: 100vh;
 }
 
+/* Inner pages use a slightly deeper, blue-tinted canvas while Home retains
+   the original white background and design-system values. */
+.inner-page {
+  --color-bg-light: #EAF1FA;
+  --color-bg-subtle: #E3ECF7;
+  --color-surface: #DCE7F5;
+  background: linear-gradient(180deg, #EAF1FA 0%, #DCE7F5 100%);
+}
+
+.inner-page .site-wrapper {
+  background: linear-gradient(180deg, #EAF1FA 0%, #DCE7F5 100%);
+}
+
 main {
   flex: 1 0 auto;
 }
@@ -700,7 +713,7 @@ body:not(:has(.announcement-strip)) .site-header,
   border-radius: 0;
   border-top: none;
   border-bottom: 1px solid var(--color-border);
-  background: linear-gradient(135deg, #E8F0F9 0%, #DCE9F6 100%);
+  background: linear-gradient(135deg, #EAF1FA 0%, #DCE7F5 100%);
   text-align: center;
   box-shadow: none;
   width: 100%;
