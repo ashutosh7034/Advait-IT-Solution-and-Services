@@ -19,22 +19,24 @@
     const slides = Array.from(document.querySelectorAll('.hero-slide'));
     if (!slider || slides.length < 2) return;
 
-    // Preload all background images to eliminate blank flashes during rotation
-    slides.forEach(slide => {
-      const image = slide.getAttribute('data-image');
-      if (image) {
-        const preloadImg = new Image();
-        preloadImg.src = image;
-        slide.style.backgroundImage = `url("${image}")`;
-      }
-    });
-
     let activeIndex = 0;
     let timer = null;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    const loadSlide = (index) => {
+      const slide = slides[index];
+      if (!slide || slide.dataset.loaded === 'true') return;
+
+      const image = slide.getAttribute('data-image');
+      if (!image) return;
+
+      slide.style.backgroundImage = `url("${image}")`;
+      slide.dataset.loaded = 'true';
+    };
+
     const showSlide = (index) => {
       activeIndex = (index + slides.length) % slides.length;
+      loadSlide(activeIndex);
       slides.forEach((slide, slideIndex) => {
         slide.classList.toggle('is-active', slideIndex === activeIndex);
       });
@@ -61,7 +63,14 @@
       else startTimer();
     });
 
+    loadSlide(0);
     showSlide(0);
+    const preloadNext = () => loadSlide(1);
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(preloadNext, { timeout: 2000 });
+    } else {
+      window.setTimeout(preloadNext, 1000);
+    }
     startTimer();
   }
 

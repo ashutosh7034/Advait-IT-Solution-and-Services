@@ -80,3 +80,12 @@ Files changed:
 3. Verify production redirects, canonical host, HTTPS, and 404 response status.
 4. Replace generic `logo.jpg` with a descriptive, optimized asset only after checking visual and branding requirements.
 5. Add original, expert-reviewed resources based on real customer questions.
+
+## Performance and verification update
+
+- The homepage hero slider now loads the visible background first and defers the next slide instead of eagerly downloading all six backgrounds on initial load.
+- The duplicate Google Fonts `@import` was removed from `css/style.css`; the existing HTML stylesheet preload path remains the single font-loading path.
+- The requested Google Search Console file was added at the repository root as `google2bfa76d203becb95.html` with the exact verification text.
+- The static repository root is the documented production output directory, so the verification file will deploy when the full root is uploaded.
+- A live request to the verification URL returned HTTP 404 before this change. Live HTTP 200 must be rechecked after deployment.
+- No PageSpeed or Lighthouse score is claimed because an external performance run was not available in this environment.

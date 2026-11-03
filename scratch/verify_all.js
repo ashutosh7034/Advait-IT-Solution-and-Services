@@ -3,7 +3,7 @@ const path = require('path');
 const http = require('http');
 
 const projectDir = '.';
-const htmlFiles = fs.readdirSync(projectDir).filter(f => f.endsWith('.html'));
+const htmlFiles = fs.readdirSync(projectDir).filter(f => f.endsWith('.html') && f !== 'google2bfa76d203becb95.html');
 let brokenCount = 0;
 let totalInline = 0;
 

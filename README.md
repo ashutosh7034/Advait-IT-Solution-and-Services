@@ -20,7 +20,7 @@ advait-it-solutions/
 ├── 404.html                # Custom 404 Error Page
 ├── robots.txt              # Search engine crawler instructions
 ├── sitemap.xml             # XML sitemap for SEO indexing
-├── favicon.svg             # Modern geometric vector brandmark favicon
+├── favicon.svg             # High-resolution embedded brandmark favicon
 ├── README.md               # Project documentation and deployment guide
 ├── css/
 │   ├── style.css           # Core Design System (Colors, Typography, Navbar, Cards, Buttons, Modals)
@@ -35,7 +35,7 @@ advait-it-solutions/
     ├── logos/
     │   ├── logo.svg        # Horizontal brand logo for light backgrounds / navbar
     │   ├── logo-white.svg  # Horizontal brand logo for dark footer / dark backgrounds
-    │   └── logo-mark.svg   # Standalone brandmark icon
+    │   └── logo1-mark.svg  # Standalone brandmark icon
     └── images/
         ├── hero-tech-dashboard.svg   # Modern cloud architecture dashboard illustration
         ├── founder-ashutosh.svg      # Executive vector portrait for Ashutosh Pandey
@@ -80,7 +80,7 @@ npx serve .
 The contact form is pre-configured and integrated with Formspree form ID **`xoeeagyl`**:
 - **Form Action:** `https://formspree.io/f/xoeeagyl`
 - **Validation Script:** Integrated in `js/form-validation.js` with client validation, honeypot spam protection (`_gotcha`), and accessible ARIA alert messaging.
-- **Recipient Action Required:** The account owner must confirm that the Formspree dashboard routing destination is set to **`ashutosh3276s16@gmail.com`**.
+- **Recipient Action Required:** The account owner must confirm that the Formspree dashboard routing destination is set to **`akp2756097@gmail.com`**.
 
 ### 2. Production Domain and Canonical URLs
 The production domain is configured as `https://advaititsolutions.com` across:
@@ -108,9 +108,9 @@ contents are sent to Google Analytics.
 
 ### 4. Contact & WhatsApp Numbers
 All verified contact options are configured throughout the pages:
-- **Official Email:** `ashutosh3276s16@gmail.com`
+- **Official Email:** `akp2756097@gmail.com`
 - **WhatsApp 1:** `+91 9702420582` (Pre-linked with project inquiry text)
-- **WhatsApp 2:** `+91 6391929317` (Pre-linked with technical services text)
+- **WhatsApp 2:** `+91 63919929317` (Pre-linked with technical services text)
 
 ---
 
@@ -186,8 +186,8 @@ The search filtering, category tabs, and modal preview will automatically update
 - **Company:** Advait IT Solutions and Services
 - **Founder & Head:** Ashutosh Pandey
 - **Technical Lead & SDE:** Aakash Pandey
-- **Office Email:** ashutosh3276s16@gmail.com
+- **Office Email:** akp2756097@gmail.com
 - **WhatsApp 1:** +91 9702420582
-- **WhatsApp 2:** +91 6391929317
+- **WhatsApp 2:** +91 63919929317
 #   A d v a i t - I T - S o l u t i o n - a n d - S e r v i c e s  
  

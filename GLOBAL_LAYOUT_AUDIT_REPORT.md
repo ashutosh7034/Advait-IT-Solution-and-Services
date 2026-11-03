@@ -184,7 +184,7 @@ Actual screenshots captured during the audit were inspected directly using visua
 ### 6. Preservation of Business Branding and Functionality
 
 1. **Company Identity**: Advait IT Solutions and Services name, logo assets, and official branding preserved.
-2. **Official Email**: Verified in all 8 pages, footers, mailto links, and metadata as `ashutosh3276s16@gmail.com`.
+2. **Official Email**: Verified in all 8 pages, footers, mailto links, and metadata as `akp2756097@gmail.com`.
 3. **Formspree Integration**: Verified working (`https://formspree.io/f/xoeeagyl`, form ID `xoeeagyl`), including anti-spam honeypot (`_gotcha`), accessible ARIA error feedback, and submit button state management.
 4. **Project Filters & Modals**: Tested and verified (search input filtering, category filtering, keyboard ESC modal dismissal, and background scroll locking).
 5. **Full Regression Test Suite**: `node scratch/run_full_uat.js` executed with **exit code 0** (48/48 matrix tests passed, 0 broken links, 0 security vulnerabilities).

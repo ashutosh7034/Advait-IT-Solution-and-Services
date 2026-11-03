@@ -11,8 +11,6 @@
      - Borders: #E2E8F0
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 :root {
   /* Core Brand Colors */
   --color-primary: #155EEF;
@@ -787,6 +785,10 @@ body:not(:has(.announcement-strip)) .site-header,
   transform: scale(1.03);
   transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1), transform 5s ease-out;
   will-change: opacity, transform;
+}
+
+.hero-slide:first-child {
+  background-image: url("../assets/images/hero-corporate-workspace.jpg");
 }
 
 .hero-slide.is-active {

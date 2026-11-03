@@ -122,7 +122,7 @@
             <a href="https://wa.me/919702420582?text=${encodeURIComponent('Hello Advait IT Solutions, I would like to submit a project inquiry.')}" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer">
               Connect on WhatsApp (+91 9702420582)
             </a>
-            <a href="mailto:ashutosh3276s16@gmail.com?subject=Project Inquiry - Advait IT Solutions" class="btn btn-secondary btn-sm">
+            <a href="mailto:akp2756097@gmail.com?subject=Project Inquiry - Advait IT Solutions" class="btn btn-secondary btn-sm">
               Send Email Directly
             </a>
           </div>
