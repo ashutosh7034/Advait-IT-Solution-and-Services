@@ -41,15 +41,15 @@ The custom domain has not yet been finalized. Do NOT invent a placeholder domain
 
 | File | Location | Current Placeholder | Action Upon Domain Selection |
 |---|---|---|---|
-| `robots.txt` | Line 7 | `Sitemap: https://yourdomain.com/sitemap.xml` | Replace `https://yourdomain.com` with finalized production URL |
-| `sitemap.xml` | Lines 4, 10, 16, 22, 28, 34, 40 | `<loc>https://yourdomain.com/...</loc>` | Update all 7 `<loc>` URLs to finalized production domain |
-| `index.html` | Head / Meta | `https://yourdomain.com/` | Replace canonical URL, `og:url`, `og:image`, and Schema.org URL |
-| `about.html` | Head / Meta | `https://yourdomain.com/about.html` | Replace canonical URL, `og:url`, and Schema.org URL |
-| `services.html` | Head / Meta | `https://yourdomain.com/services.html` | Replace canonical URL, `og:url`, and Schema.org URL |
-| `advait-advantage.html` | Head / Meta | `https://yourdomain.com/advait-advantage.html` | Replace canonical URL, `og:url`, and Schema.org URL |
-| `projects.html` | Head / Meta | `https://yourdomain.com/projects.html` | Replace canonical URL, `og:url`, and Schema.org URL |
-| `contact.html` | Head / Meta | `https://yourdomain.com/contact.html` | Replace canonical URL, `og:url`, and Schema.org URL |
-| `privacy-policy.html` | Head / Meta | `https://yourdomain.com/privacy-policy.html` | Replace canonical URL, `og:url`, and Schema.org URL |
+| `robots.txt` | Line 7 | `Sitemap: https://advaititsolutions.com/sitemap.xml` | Production sitemap URL configured |
+| `sitemap.xml` | Lines 4, 10, 16, 22, 28, 34, 40 | `<loc>https://advaititsolutions.com/...</loc>` | Production URLs configured |
+| `index.html` | Head / Meta | `https://advaititsolutions.com/` | Canonical URL, `og:url`, `og:image`, and Schema.org URL configured |
+| `about.html` | Head / Meta | `https://advaititsolutions.com/about.html` | Canonical URL, `og:url`, and Schema.org URL configured |
+| `services.html` | Head / Meta | `https://advaititsolutions.com/services.html` | Canonical URL, `og:url`, and Schema.org URL configured |
+| `advait-advantage.html` | Head / Meta | `https://advaititsolutions.com/advait-advantage.html` | Canonical URL, `og:url`, and Schema.org URL configured |
+| `projects.html` | Head / Meta | `https://advaititsolutions.com/projects.html` | Canonical URL, `og:url`, and Schema.org URL configured |
+| `contact.html` | Head / Meta | `https://advaititsolutions.com/contact.html` | Canonical URL, `og:url`, and Schema.org URL configured |
+| `privacy-policy.html` | Head / Meta | `https://advaititsolutions.com/privacy-policy.html` | Canonical URL configured |
 
 ---
 
