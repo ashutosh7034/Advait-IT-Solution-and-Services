@@ -700,7 +700,7 @@ body:not(:has(.announcement-strip)) .site-header,
   border-radius: 0;
   border-top: none;
   border-bottom: 1px solid var(--color-border);
-  background: linear-gradient(135deg, #FFFFFF 0%, #EFF6FF 100%);
+  background: linear-gradient(135deg, #E8F0F9 0%, #DCE9F6 100%);
   text-align: center;
   box-shadow: none;
   width: 100%;
@@ -917,6 +917,28 @@ body:not(:has(.announcement-strip)) .site-header,
   border-color: #FFFFFF;
   color: #FFFFFF;
   transform: translateY(-2px);
+}
+
+.page-header-compact .hero-actions .compare-delivery-models {
+  background: #102544;
+  color: #FFFFFF;
+  border-color: #1D4B7A;
+  box-shadow: 0 4px 14px rgba(11, 31, 58, 0.24);
+}
+
+.page-header-compact .hero-actions .compare-delivery-models:hover {
+  background: #0B1F3A;
+  color: #FFFFFF;
+  border-color: #155EEF;
+  box-shadow: 0 6px 18px rgba(11, 31, 58, 0.3);
+  transform: translateY(-2px);
+}
+
+.page-header-compact .hero-actions .compare-delivery-models:focus-visible {
+  background: #102544;
+  color: #FFFFFF;
+  border-color: #60A5FA;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.35), 0 4px 14px rgba(11, 31, 58, 0.24);
 }
 
 /* Verified Statistics Bar inside Hero (Center-Aligned) */
