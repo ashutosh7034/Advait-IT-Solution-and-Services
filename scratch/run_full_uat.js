@@ -158,14 +158,14 @@ async function runUAT() {
     brokenLinks,
     mailtoCount: mailtoLinks.size,
     mailtoDestinations: Array.from(mailtoLinks),
-    allMailtoOfficialEmail: Array.from(mailtoLinks).every(m => m.includes('ashutosh3276s16@gmail.com')),
+    allMailtoOfficialEmail: Array.from(mailtoLinks).every(m => m.includes('akp2756097@gmail.com')),
     telCount: telLinks.size,
     waCount: waLinks.size,
     externalLinksCount
   };
   console.log('Broken Links:', brokenLinks.length);
   console.log('Mailto Links:', Array.from(mailtoLinks));
-  console.log('All Mailto Official Email (ashutosh3276s16@gmail.com):', uatResults.linkAudit.allMailtoOfficialEmail);
+  console.log('All Mailto Official Email (akp2756097@gmail.com):', uatResults.linkAudit.allMailtoOfficialEmail);
 
   // -------------------------------------------------------------
   // PHASE E: CONTACT FORM UAT (CF-01 through CF-15)
@@ -264,7 +264,7 @@ async function runUAT() {
       // CF-13: WhatsApp & Direct Email alternatives
       const waLinks = Array.from(document.querySelectorAll('a[href*="wa.me"]'));
       const mailLinks = Array.from(document.querySelectorAll('a[href^="mailto:"]'));
-      const allOfficial = mailLinks.every(a => a.href.includes('ashutosh3276s16@gmail.com'));
+      const allOfficial = mailLinks.every(a => a.href.includes('akp2756097@gmail.com'));
       results.CF13_alternatives = {
         waLinksCount: waLinks.length,
         mailLinksCount: mailLinks.length,

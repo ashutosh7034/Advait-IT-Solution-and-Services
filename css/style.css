@@ -11,7 +11,6 @@
      - Borders: #E2E8F0
    ========================================================================== */
 
-
 :root {
   /* Core Brand Colors */
   --color-primary: #155EEF;
@@ -110,6 +109,19 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+/* Inner pages use a slightly deeper, blue-tinted canvas while Home retains
+   the original white background and design-system values. */
+.inner-page {
+  --color-bg-light: #EAF1FA;
+  --color-bg-subtle: #E3ECF7;
+  --color-surface: #DCE7F5;
+  background: linear-gradient(180deg, #EAF1FA 0%, #DCE7F5 100%);
+}
+
+.inner-page .site-wrapper {
+  background: linear-gradient(180deg, #EAF1FA 0%, #DCE7F5 100%);
 }
 
 main {
@@ -739,7 +751,7 @@ body:not(:has(.announcement-strip)) .site-header,
   border-radius: 0;
   border-top: none;
   border-bottom: 1px solid var(--color-border);
-  background: linear-gradient(135deg, #FFFFFF 0%, #EFF6FF 100%);
+  background: linear-gradient(135deg, #EAF1FA 0%, #DCE7F5 100%);
   text-align: center;
   box-shadow: none;
   width: 100%;
@@ -841,6 +853,10 @@ body:not(:has(.announcement-strip)) .site-header,
   transform: scale(1.03);
   transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1), transform 5s ease-out;
   will-change: opacity, transform;
+}
+
+.hero-slide:first-child {
+  background-image: url("../assets/images/hero-corporate-workspace.jpg");
 }
 
 .hero-slide.is-active {
@@ -969,6 +985,28 @@ body:not(:has(.announcement-strip)) .site-header,
   border-color: #FFFFFF;
   color: #FFFFFF;
   transform: translateY(-2px);
+}
+
+.page-header-compact .hero-actions .compare-delivery-models {
+  background: #102544;
+  color: #FFFFFF;
+  border-color: #1D4B7A;
+  box-shadow: 0 4px 14px rgba(11, 31, 58, 0.24);
+}
+
+.page-header-compact .hero-actions .compare-delivery-models:hover {
+  background: #0B1F3A;
+  color: #FFFFFF;
+  border-color: #155EEF;
+  box-shadow: 0 6px 18px rgba(11, 31, 58, 0.3);
+  transform: translateY(-2px);
+}
+
+.page-header-compact .hero-actions .compare-delivery-models:focus-visible {
+  background: #102544;
+  color: #FFFFFF;
+  border-color: #60A5FA;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.35), 0 4px 14px rgba(11, 31, 58, 0.24);
 }
 
 /* Verified Statistics Bar inside Hero (Center-Aligned) */

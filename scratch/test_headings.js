@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const files = fs.readdirSync('.').filter(f => f.endsWith('.html'));
+const files = fs.readdirSync('.').filter(f => f.endsWith('.html') && f !== 'google2bfa76d203becb95.html');
 
 files.forEach(f => {
   const content = fs.readFileSync(f, 'utf8');

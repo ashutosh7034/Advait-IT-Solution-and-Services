@@ -1,5 +1,5 @@
 # robots.txt for Advait IT Solutions and Services
-# Replace https://advaititsolutions.com with your live deployed domain
+# Production crawler directives for advaititsolutions.com
 User-agent: *
 Allow: /
 Disallow: /404.html

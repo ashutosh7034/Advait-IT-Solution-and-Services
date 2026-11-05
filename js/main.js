@@ -20,6 +20,7 @@
     initScrollToTop();
     initDynamicYear();
     setActiveNavLink();
+    initAnalyticsEvents();
   }
 
   /**
@@ -137,6 +138,7 @@
           link.classList.add('active');
           matched = true;
         }
+
       });
     }
 
@@ -150,8 +152,53 @@
             link.classList.add('active');
           }
         }
+
       });
     }
+  }
+
+  /**
+   * Pushes privacy-safe interaction events to the global GA4 dataLayer.
+   */
+  function initAnalyticsEvents() {
+    window.dataLayer = window.dataLayer || [];
+
+    const trackEvent = (eventName, parameters = {}) => {
+      window.dataLayer.push({
+        event: eventName,
+        ...parameters
+      });
+    };
+
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a');
+      if (!link) return;
+
+      const href = link.getAttribute('href') || '';
+      const label = (link.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+
+      if (href.startsWith('tel:')) {
+        trackEvent('phone_click');
+        return;
+      }
+
+      if (href.startsWith('mailto:')) {
+        trackEvent('email_click');
+        return;
+      }
+
+      if (href.startsWith('https://wa.me/')) {
+        trackEvent('whatsapp_click');
+        return;
+      }
+
+      if (link.matches('.btn, .announcement-link')) {
+        trackEvent('cta_click', {
+          cta_name: label,
+          destination: href.split('?')[0].split('#')[0]
+        });
+      }
+    });
   }
 
   /**

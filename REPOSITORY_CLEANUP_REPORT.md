@@ -5,7 +5,7 @@
 **Auditor / Release Manager:** Senior Software Engineer, Git Specialist & QA Lead
 **Target Branch:** `main`
 **Repository Remote:** `https://github.com/ashutosh7034/Advait-IT-Solution-and-Services.git`
-**Official Company Email:** `ashutosh3276s16@gmail.com`
+**Official Company Email:** `akp2756097@gmail.com`
 **Formspree Form ID:** `xoeeagyl`
 
 ---
@@ -87,7 +87,7 @@ A comprehensive [`.gitignore`](file:///c:/Users/Ashutosh%20Pandey/Downloads/Adva
    - The production domain has not yet been finalized.
    - Once acquired, follow Section 3.2 in `PRODUCTION_LAUNCH_CHECKLIST.md` to update canonical URLs in `robots.txt`, `sitemap.xml`, and page `<head>` tags.
 2. **Formspree Notification Destination:**
-   - The owner must log into Formspree (`form ID xoeeagyl`) and confirm the routing target is set to `ashutosh3276s16@gmail.com`.
+   - The owner must log into Formspree (`form ID xoeeagyl`) and confirm the routing target is set to `akp2756097@gmail.com`.
 3. **Live Email Delivery Confirmation:**
    - Submit one live test inquiry once the website is hosted on the public domain to verify delivery.
 

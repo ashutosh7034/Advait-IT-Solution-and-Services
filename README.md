@@ -20,7 +20,7 @@ advait-it-solutions/
 ├── 404.html                # Custom 404 Error Page
 ├── robots.txt              # Search engine crawler instructions
 ├── sitemap.xml             # XML sitemap for SEO indexing
-├── favicon.svg             # Modern geometric vector brandmark favicon
+├── favicon.svg             # High-resolution embedded brandmark favicon
 ├── README.md               # Project documentation and deployment guide
 ├── css/
 │   ├── style.css           # Core Design System (Colors, Typography, Navbar, Cards, Buttons, Modals)
@@ -35,7 +35,7 @@ advait-it-solutions/
     ├── logos/
     │   ├── logo.svg        # Horizontal brand logo for light backgrounds / navbar
     │   ├── logo-white.svg  # Horizontal brand logo for dark footer / dark backgrounds
-    │   └── logo-mark.svg   # Standalone brandmark icon
+    │   └── logo1-mark.svg  # Standalone brandmark icon
     └── images/
         ├── hero-tech-dashboard.svg   # Modern cloud architecture dashboard illustration
         ├── founder-ashutosh.svg      # Executive vector portrait for Ashutosh Pandey
@@ -80,24 +80,37 @@ npx serve .
 The contact form is pre-configured and integrated with Formspree form ID **`xoeeagyl`**:
 - **Form Action:** `https://formspree.io/f/xoeeagyl`
 - **Validation Script:** Integrated in `js/form-validation.js` with client validation, honeypot spam protection (`_gotcha`), and accessible ARIA alert messaging.
-- **Recipient Action Required:** The account owner must confirm that the Formspree dashboard routing destination is set to **`ashutosh3276s16@gmail.com`**.
+- **Recipient Action Required:** The account owner must confirm that the Formspree dashboard routing destination is set to **`akp2756097@gmail.com`**.
 
-### 2. Configure Your Live Domain Name & Canonical URLs
-When a custom live domain is finalized, replace placeholder references (`https://yourdomain.com`) across:
+### 2. Production Domain and Canonical URLs
+The production domain is configured as `https://advaititsolutions.com` across:
 - `index.html` (canonical, Open Graph, Twitter card, Schema JSON-LD)
 - `about.html` (canonical, Open Graph)
 - `services.html` (canonical, Open Graph)
 - `projects.html` (canonical, Open Graph)
 - `contact.html` (canonical, Open Graph)
 - `privacy-policy.html` (canonical)
-- `robots.txt` (`Sitemap: https://yourdomain.com/sitemap.xml`)
+- `robots.txt` (`Sitemap: https://advaititsolutions.com/sitemap.xml`)
 - `sitemap.xml` (all `<loc>` URLs)
 
-### 3. Contact & WhatsApp Numbers
+### 3. Google Analytics 4
+All HTML pages load the single official Google Analytics tag for
+Measurement ID `G-MNV8W0JCC7`. The former Google Tag Manager container was
+removed to prevent duplicate analytics installations and duplicate `page_view`
+events.
+
+The global `js/main.js` script sends privacy-safe `dataLayer` events for
+`cta_click`, `phone_click`, `email_click`, and `whatsapp_click`. Successful
+contact submissions send `contact_form_submit` from `js/form-validation.js`.
+Configure matching GA4 event tags only if these custom events need to be
+registered as conversions. No names, email addresses, phone numbers, or form
+contents are sent to Google Analytics.
+
+### 4. Contact & WhatsApp Numbers
 All verified contact options are configured throughout the pages:
-- **Official Email:** `ashutosh3276s16@gmail.com`
+- **Official Email:** `akp2756097@gmail.com`
 - **WhatsApp 1:** `+91 9702420582` (Pre-linked with project inquiry text)
-- **WhatsApp 2:** `+91 6391929317` (Pre-linked with technical services text)
+- **WhatsApp 2:** `+91 63919929317` (Pre-linked with technical services text)
 
 ---
 
@@ -173,8 +186,8 @@ The search filtering, category tabs, and modal preview will automatically update
 - **Company:** Advait IT Solutions and Services
 - **Founder & Head:** Ashutosh Pandey
 - **Technical Lead & SDE:** Aakash Pandey
-- **Office Email:** ashutosh3276s16@gmail.com
+- **Office Email:** akp2756097@gmail.com
 - **WhatsApp 1:** +91 9702420582
-- **WhatsApp 2:** +91 6391929317
+- **WhatsApp 2:** +91 63919929317
 #   A d v a i t - I T - S o l u t i o n - a n d - S e r v i c e s  
  
