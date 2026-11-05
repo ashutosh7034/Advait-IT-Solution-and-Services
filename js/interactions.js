@@ -253,7 +253,40 @@
     });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
     initServicesQuickNav();
+    initConversionTracking();
   });
+
+  /**
+   * GA4 Custom Conversion Event Tracking (Privacy-conscious)
+   * Tracks high-intent visitor interactions: WhatsApp clicks, email inquiries, and service quick-nav selections.
+   */
+  function initConversionTracking() {
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
+      const href = link.getAttribute('href') || '';
+
+      if (typeof window.gtag !== 'function') return;
+
+      if (href.startsWith('https://wa.me/') || href.includes('whatsapp')) {
+        window.gtag('event', 'whatsapp_click', {
+          event_category: 'conversion_intent',
+          event_label: href
+        });
+      } else if (href.startsWith('mailto:')) {
+        window.gtag('event', 'email_click', {
+          event_category: 'conversion_intent',
+          event_label: href.replace(/^mailto:/i, '').split('?')[0]
+        });
+      } else if (link.classList.contains('quicknav-link') || link.classList.contains('quicknav-card')) {
+        const labelEl = link.querySelector('.quicknav-label');
+        window.gtag('event', 'select_service', {
+          event_category: 'service_engagement',
+          event_label: labelEl ? labelEl.textContent.trim() : href
+        });
+      }
+    }, { passive: true });
+  }
 })();
