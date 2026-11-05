@@ -206,9 +206,8 @@
    * Active Quick-Nav Highlighting for Services Page
    */
   function initServicesQuickNav() {
-    const quickNavLinks = document.querySelectorAll('.quicknav-link');
+    const quickNavLinks = document.querySelectorAll('.quicknav-link, .quicknav-card');
     const serviceCards = document.querySelectorAll('.service-detail-card');
-    const quickNav = document.querySelector('.services-quicknav');
     if (!quickNavLinks.length || !serviceCards.length) return;
 
     const observer = new IntersectionObserver((entries) => {
@@ -219,15 +218,6 @@
             const href = link.getAttribute('href');
             if (href === `#${id}`) {
               link.classList.add('active');
-              // Center the active pill smoothly inside the horizontal scroll container.
-              const linkLeft = link.offsetLeft;
-              const linkWidth = link.offsetWidth;
-              const containerWidth = quickNav.clientWidth;
-              const targetScroll = linkLeft - (containerWidth / 2) + (linkWidth / 2);
-              quickNav.scrollTo({
-                left: Math.max(0, targetScroll),
-                behavior: 'smooth'
-              });
             } else {
               link.classList.remove('active');
             }
@@ -235,10 +225,32 @@
         }
       });
     }, {
-      rootMargin: '-20% 0px -70% 0px'
+      rootMargin: '-20% 0px -60% 0px'
     });
 
     serviceCards.forEach(card => observer.observe(card));
+
+    // Smooth scroll navigation accounting for sticky header offset
+    quickNavLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            const header = document.querySelector('.site-header');
+            const announcement = document.querySelector('.announcement-strip');
+            const offset = (header ? header.offsetHeight : 68) + (announcement ? announcement.offsetHeight : 38) + 20;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({
+              top: Math.max(0, top),
+              behavior: 'smooth'
+            });
+            history.pushState(null, '', href);
+          }
+        }
+      });
+    });
   }
 
   document.addEventListener('DOMContentLoaded', () => {

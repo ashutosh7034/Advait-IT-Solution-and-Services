@@ -25,7 +25,12 @@ appHtmlFiles.forEach(file => {
   assert(/<meta\s+name=["']description["']/i.test(content), `[${file}] Has meta description`);
   assert(content.includes('googletagmanager.com') || content.includes('G-MNV8W0JCC7'), `[${file}] Contains GA4 / Google Analytics tag`);
   assert(!content.includes('yourdomain.com'), `[${file}] Zero placeholder domain references`);
-  assert(!content.includes('akp2756097@gmail.com'), `[${file}] Zero old/inconsistent email references`);
+
+  // Check footer email addresses on pages that contain full footers
+  if (file !== '404.html') {
+    assert(content.includes('ashutosh3276s16@gmail.com'), `[${file}] Contains primary email (ashutosh3276s16@gmail.com)`);
+    assert(content.includes('akp2756097@gmail.com'), `[${file}] Contains secondary email (akp2756097@gmail.com)`);
+  }
 
   // Check on-disk assets
   const srcMatches = [...content.matchAll(/src=["']([^"']+)["']/g)].map(m => m[1]);
