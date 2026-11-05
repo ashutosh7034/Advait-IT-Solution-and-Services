@@ -203,53 +203,143 @@
   }
 
   /**
-   * Active Quick-Nav Highlighting for Services Page
+   * Active Quick-Nav Highlighting and Smooth Scrolling for Services Page
    */
   function initServicesQuickNav() {
-    const quickNavLinks = document.querySelectorAll('.quicknav-link, .quicknav-card');
-    const serviceCards = document.querySelectorAll('.service-detail-card');
+    const quickNavSection = document.querySelector('.services-quicknav');
+    const quickNavLinks = Array.from(document.querySelectorAll('.services-quicknav-grid .quicknav-card'));
+    const serviceCards = Array.from(document.querySelectorAll('.service-detail-card'));
     if (!quickNavLinks.length || !serviceCards.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          quickNavLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === `#${id}`) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
-          });
+    const getHeaderOffset = () => {
+      const header = document.querySelector('.site-header');
+      const announcement = document.querySelector('.announcement-strip');
+      return (header ? header.offsetHeight : 68) + (announcement ? announcement.offsetHeight : 38) + 24;
+    };
+
+    const setActiveCard = (id) => {
+      quickNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (id && href === `#${id}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
         }
       });
-    }, {
-      rootMargin: '-20% 0px -60% 0px'
-    });
+    };
 
-    serviceCards.forEach(card => observer.observe(card));
+    const scrollToTarget = (targetId, updateHash = true) => {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      const offset = getHeaderOffset();
+      const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
+      
+      setActiveCard(targetId);
+      
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: 'smooth'
+      });
+      
+      if (updateHash && window.location.hash !== `#${targetId}`) {
+        history.pushState(null, '', `#${targetId}`);
+      }
+    };
 
-    // Smooth scroll navigation accounting for sticky header offset
+    // Click handler for Quick Nav Cards
     quickNavLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         const href = link.getAttribute('href');
         if (href && href.startsWith('#')) {
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            const header = document.querySelector('.site-header');
-            const announcement = document.querySelector('.announcement-strip');
-            const offset = (header ? header.offsetHeight : 68) + (announcement ? announcement.offsetHeight : 38) + 20;
-            const top = target.getBoundingClientRect().top + window.scrollY - offset;
-            window.scrollTo({
-              top: Math.max(0, top),
-              behavior: 'smooth'
-            });
-            history.pushState(null, '', href);
+          e.preventDefault();
+          const targetId = href.slice(1);
+          scrollToTarget(targetId);
+        }
+      });
+    });
+
+    // Handle Navbar dropdown links when on services.html
+    const dropdownServiceLinks = document.querySelectorAll('.dropdown-link-card[href*="#"]');
+    dropdownServiceLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href') || '';
+        const hash = href.includes('#') ? href.split('#')[1] : '';
+        if (hash && document.getElementById(hash)) {
+          e.preventDefault();
+          scrollToTarget(hash);
+          const navMenu = document.querySelector('.nav-menu');
+          const hamburger = document.querySelector('.hamburger-btn');
+          if (navMenu && navMenu.classList.contains('is-open')) {
+            navMenu.classList.remove('is-open');
+            if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
           }
         }
       });
+    });
+
+    // Robust Scroll Spy using requestAnimationFrame
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        const offset = getHeaderOffset();
+        const scrollPos = window.scrollY + offset + 80;
+        
+        // If user is at top (Hero or Quick Nav), no card is active
+        if (quickNavSection) {
+          const quickNavBottom = quickNavSection.offsetTop + quickNavSection.offsetHeight;
+          if (window.scrollY + offset < quickNavBottom) {
+            setActiveCard(null);
+            return;
+          }
+        }
+
+        // Find current card in view
+        let currentId = null;
+        for (let i = 0; i < serviceCards.length; i++) {
+          const card = serviceCards[i];
+          const top = card.offsetTop;
+          const height = card.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height + 30) {
+            currentId = card.id;
+            break;
+          }
+        }
+
+        if (!currentId && serviceCards.length > 0) {
+          const lastCard = serviceCards[serviceCards.length - 1];
+          if (scrollPos >= lastCard.offsetTop) {
+            currentId = lastCard.id;
+          }
+        }
+
+        setActiveCard(currentId);
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Handle initial hash on page load
+    const handleInitialHash = () => {
+      const hash = window.location.hash ? window.location.hash.slice(1) : '';
+      if (hash && document.getElementById(hash)) {
+        setTimeout(() => {
+          scrollToTarget(hash, false);
+        }, 150);
+      } else {
+        onScroll();
+      }
+    };
+
+    handleInitialHash();
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash ? window.location.hash.slice(1) : '';
+      if (hash && document.getElementById(hash)) {
+        scrollToTarget(hash, false);
+      }
     });
   }
 
