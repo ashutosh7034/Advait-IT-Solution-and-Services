@@ -16,7 +16,8 @@
   });
 
   /**
-   * Reads ?service=... from URL query and pre-selects the corresponding dropdown option
+   * Reads ?service=... from URL query and pre-selects the corresponding dropdown option.
+   * Handles hyphenated/underscored parameter slugs, URL encoding, and common aliases.
    */
   function prefillServiceFromUrl() {
     const serviceSelect = document.querySelector('#contactService');
@@ -26,12 +27,74 @@
     const requestedService = urlParams.get('service');
     if (!requestedService) return;
 
-    const normalizedReq = requestedService.toLowerCase().trim();
+    const decoded = decodeURIComponent(requestedService).trim().toLowerCase();
+    const cleaned = decoded.replace(/[^a-z0-9]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!cleaned) return;
+
+    // Canonical keyword and slug aliases
+    const aliases = {
+      'web dev': 'Website Development',
+      'website development': 'Website Development',
+      'web development': 'Website Development',
+      'web applications': 'Web Application Development',
+      'web application': 'Web Application Development',
+      'web apps': 'Web Application Development',
+      'web app': 'Web Application Development',
+      'software development': 'Custom Software Development',
+      'software engineering': 'Custom Software Development',
+      'custom software': 'Custom Software Development',
+      'software dev': 'Custom Software Development',
+      'mobile development': 'Mobile Application Development',
+      'mobile application development': 'Mobile Application Development',
+      'mobile apps': 'Mobile Application Development',
+      'mobile app': 'Mobile Application Development',
+      'mobile dev': 'Mobile Application Development',
+      'ui ux design': 'UI/UX and Redesign',
+      'ui ux': 'UI/UX and Redesign',
+      'redesign': 'UI/UX and Redesign',
+      'website maintenance': 'Website Maintenance',
+      'maintenance': 'Website Maintenance',
+      'hosting servers': 'Domain, Hosting & Server',
+      'domain hosting': 'Domain, Hosting & Server',
+      'hosting domain': 'Domain, Hosting & Server',
+      'hosting': 'Domain, Hosting & Server',
+      'server': 'Domain, Hosting & Server',
+      'cloud deployment': 'Cloud, DevOps & Deployment',
+      'cloud devops': 'Cloud, DevOps & Deployment',
+      'cloud': 'Cloud, DevOps & Deployment',
+      'devops': 'Cloud, DevOps & Deployment',
+      'testing qa': 'Software Testing & QA',
+      'qa testing': 'Software Testing & QA',
+      'qa': 'Software Testing & QA',
+      'testing': 'Software Testing & QA',
+      'cybersecurity': 'Cybersecurity Review',
+      'website security': 'Cybersecurity Review',
+      'security': 'Cybersecurity Review',
+      'api database': 'API and Database Services',
+      'database': 'API and Database Services',
+      'api': 'API and Database Services',
+      'it consulting': 'IT Consulting',
+      'consulting': 'IT Consulting',
+      'seo optimization': 'SEO and Optimization',
+      'seo': 'SEO and Optimization',
+      'digital services': 'Additional Digital Services',
+      'additional services': 'Additional Digital Services'
+    };
+
+    const targetOption = aliases[cleaned] || null;
+
     for (let option of serviceSelect.options) {
-      const optVal = option.value.toLowerCase().trim();
-      if (optVal === normalizedReq || optVal.includes(normalizedReq)) {
+      if (!option.value) continue;
+      const optVal = option.value.trim();
+      const optCleaned = optVal.toLowerCase().replace(/[^a-z0-9]/g, ' ').replace(/\s+/g, ' ').trim();
+
+      if (targetOption && optVal.toLowerCase() === targetOption.toLowerCase()) {
         option.selected = true;
-        break;
+        return;
+      }
+      if (optCleaned === cleaned || optCleaned.includes(cleaned) || cleaned.includes(optCleaned)) {
+        option.selected = true;
+        return;
       }
     }
   }

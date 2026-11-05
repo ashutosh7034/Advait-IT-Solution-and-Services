@@ -210,14 +210,15 @@
             const href = link.getAttribute('href');
             if (href === `#${id}`) {
               link.classList.add('active');
-              // Keep the active pill visible without changing the document scroll position.
-              const linkEnd = link.offsetLeft + link.offsetWidth;
-              const visibleEnd = quickNav.scrollLeft + quickNav.clientWidth;
-              if (link.offsetLeft < quickNav.scrollLeft) {
-                quickNav.scrollLeft = link.offsetLeft;
-              } else if (linkEnd > visibleEnd) {
-                quickNav.scrollLeft = linkEnd - quickNav.clientWidth;
-              }
+              // Center the active pill smoothly inside the horizontal scroll container.
+              const linkLeft = link.offsetLeft;
+              const linkWidth = link.offsetWidth;
+              const containerWidth = quickNav.clientWidth;
+              const targetScroll = linkLeft - (containerWidth / 2) + (linkWidth / 2);
+              quickNav.scrollTo({
+                left: Math.max(0, targetScroll),
+                behavior: 'smooth'
+              });
             } else {
               link.classList.remove('active');
             }

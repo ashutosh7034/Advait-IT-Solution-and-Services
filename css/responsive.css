@@ -84,7 +84,9 @@
   /* Dropdown inside Mobile/Tablet Drawer */
   .dropdown-menu {
     position: static;
+    left: auto;
     width: 100%;
+    max-width: 100%;
     box-shadow: none;
     border: 1px solid var(--color-border);
     margin-top: 8px;
@@ -94,6 +96,12 @@
     visibility: visible;
     pointer-events: auto;
     padding: 12px;
+    white-space: normal;
+  }
+
+  .nav-item.dropdown:hover .dropdown-menu,
+  .nav-item.dropdown:focus-within .dropdown-menu {
+    transform: none;
   }
 
   .nav-item.dropdown.is-open .dropdown-menu {
@@ -172,8 +180,19 @@
   .section-navy,
   .page-header-compact {
     margin: 0;
-    padding: 56px 0;
+    padding: 40px 0 30px 0;
     border-radius: 0;
+  }
+
+  .page-header-compact h1 {
+    font-size: clamp(1.65rem, 3vw, 1.95rem);
+    line-height: 1.24;
+    margin-bottom: 12px;
+  }
+
+  .page-header-compact .section-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.52;
   }
 
   .trust-grid {
@@ -258,23 +277,25 @@
   }
 
   .hero-title {
-    font-size: clamp(1.9rem, 6vw, 2.35rem);
+    font-size: clamp(1.75rem, 5.2vw, 2.15rem);
+    line-height: 1.2;
   }
 
   .hero-section-centered .hero-title {
-    font-size: clamp(1.85rem, 6vw, 2.25rem);
+    font-size: clamp(1.75rem, 5.2vw, 2.15rem);
+    line-height: 1.2;
   }
 
   .hero-description {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin-bottom: 28px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
   }
 
   .hero-section-centered .hero-description {
-    font-size: 1rem;
+    font-size: 0.98rem;
     line-height: 1.55;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 
   .hero-actions {
@@ -320,8 +341,27 @@
   .section-navy,
   .page-header-compact {
     margin: 0;
-    padding: 44px 0;
+    padding: 32px 0 24px 0;
     border-radius: 0;
+  }
+
+  .page-header-compact h1 {
+    font-size: clamp(1.5rem, 4.2vw, 1.8rem);
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .page-header-compact .section-subtitle {
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: clamp(1.35rem, 3.6vw, 1.65rem);
+  }
+
+  .cta-banner h2 {
+    font-size: clamp(1.4rem, 3.8vw, 1.75rem);
   }
 
   /* Grid Adjustments */
@@ -472,6 +512,34 @@
     grid-template-columns: 1fr;
   }
 
+  .page-header-compact {
+    padding: 26px 0 18px 0;
+  }
+
+  .page-header-compact h1 {
+    font-size: clamp(1.35rem, 5.2vw, 1.6rem);
+    line-height: 1.25;
+  }
+
+  .page-header-compact .section-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.48;
+  }
+
+  .hero-title,
+  .hero-section-centered .hero-title {
+    font-size: clamp(1.55rem, 5.8vw, 1.85rem);
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 4.8vw, 1.45rem);
+  }
+
+  .cta-banner h2 {
+    font-size: clamp(1.3rem, 5vw, 1.55rem);
+  }
+
   .hero-actions {
     flex-direction: column;
     width: 100%;
@@ -518,5 +586,17 @@
 @media (max-width: 360px) {
   :root {
     --announcement-height: 96px;
+  }
+
+  .page-header-compact h1 {
+    font-size: 1.3rem;
+  }
+
+  .hero-section-centered .hero-title {
+    font-size: 1.45rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
   }
 }

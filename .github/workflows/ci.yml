@@ -1,0 +1,36 @@
+name: CI & Technical Quality Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify Codebase Integrity & Production Standards
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate JavaScript Syntax
+        run: |
+          node --check js/main.js
+          node --check js/interactions.js
+          node --check js/projects-data.js
+          node --check js/form-validation.js
+
+      - name: Run Automated HTML, SEO, Link & Security Suite
+        run: node scratch/test_ci.js
+
