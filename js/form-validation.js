@@ -78,7 +78,12 @@
       'seo optimization': 'SEO and Optimization',
       'seo': 'SEO and Optimization',
       'digital services': 'Additional Digital Services',
-      'additional services': 'Additional Digital Services'
+      'additional services': 'Additional Digital Services',
+      'business software': 'Custom Software Development',
+      'business software development': 'Custom Software Development',
+      'websites': 'Website Development',
+      'other it': 'Additional Digital Services',
+      'other it solutions': 'Additional Digital Services'
     };
 
     const targetOption = aliases[cleaned] || null;

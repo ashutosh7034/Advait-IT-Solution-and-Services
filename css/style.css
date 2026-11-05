@@ -3535,3 +3535,13 @@ body:not(:has(.announcement-strip)) .site-header,
 .modal-section-block-last {
   margin-bottom: 28px;
 }
+
+#comparison,
+#leadership {
+  scroll-margin-top: calc(var(--announcement-height) + var(--navbar-height) + 24px);
+}
+
+.checkbox-label.is-invalid input[type="checkbox"] {
+  outline: 2px solid #EF4444;
+  outline-offset: 2px;
+}
