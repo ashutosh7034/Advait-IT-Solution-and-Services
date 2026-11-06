@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Software &amp; Web Projects Portfolio | Advait IT Solutions</title>
-  <meta name="description" content="Browse verified software and web projects delivered by Advait IT Solutions. Explore custom web applications, responsive websites, and enterprise tools.">>
+  <meta name="description" content="Browse verified software and web projects delivered by Advait IT Solutions. Explore custom web applications, responsive websites, and enterprise tools.">
   <meta name="keywords" content="Advait IT Solutions portfolio, software engineering projects, web development case studies, IT solutions showcase">
   <meta name="author" content="Advait IT Solutions and Services">
   <meta name="robots" content="index, follow">
@@ -21,19 +21,19 @@
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://advaititsolutions.com/projects.html">
-  <meta property="og:title" content="Software &amp; Web Projects Portfolio | Advait IT Solutions">>
-  <meta property="og:description" content="Verified client implementations and custom software engineering projects delivered by Advait IT Solutions in Mumbai across diverse industries.">>
+  <meta property="og:title" content="Software &amp; Web Projects Portfolio | Advait IT Solutions">
+  <meta property="og:description" content="Verified client implementations and custom software engineering projects delivered by Advait IT Solutions in Mumbai across diverse industries.">
   <meta property="og:image" content="https://advaititsolutions.com/assets/images/hero-corporate-workspace.jpg">
   <meta property="og:site_name" content="Advait IT Solutions and Services">
   <meta property="og:locale" content="en_IN">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Advait IT Solutions - Client Projects and Software Portfolio">>
+  <meta property="og:image:alt" content="Advait IT Solutions - Client Projects and Software Portfolio">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Software &amp; Web Projects Portfolio | Advait IT Solutions">>
-  <meta name="twitter:description" content="Verified client implementations and custom software engineering projects delivered by Advait IT Solutions in Mumbai across diverse industries.">>
-  <meta name="twitter:image" content="https://advaititsolutions.com/assets/images/hero-corporate-workspace.jpg">>
+  <meta name="twitter:title" content="Software &amp; Web Projects Portfolio | Advait IT Solutions">
+  <meta name="twitter:description" content="Verified client implementations and custom software engineering projects delivered by Advait IT Solutions in Mumbai across diverse industries.">
+  <meta name="twitter:image" content="https://advaititsolutions.com/assets/images/hero-corporate-workspace.jpg">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
@@ -210,41 +210,44 @@
   </header>
 
   <main id="mainContent">
-    <!-- Header Hero -->
-    <section class="section section-light page-header-compact">
-      <div class="container container-narrow text-center">
-        <span class="section-kicker">Portfolio &amp; Case Studies</span>
-        <h1>Engineered for Reliability &amp; Business Value</h1>
-        <p class="section-subtitle">
-          Explore our delivered projects and software architectures. Each solution is built with clean code, responsive layouts, and robust security.
+    <!-- Compact Portfolio Hero & Toolbar -->
+    <section class="projects-hero-compact" aria-label="Our Portfolio">
+      <div class="container text-center">
+        <h1 class="projects-hero-title">Software Solutions Built for Real Business Needs</h1>
+        <p class="projects-hero-subtitle">
+          Explore our web applications, business software, and digital solutions designed to solve real-world challenges.
         </p>
+
+        <!-- Compact Search & Filter Toolbar -->
+        <div class="projects-toolbar" id="projectsToolbar">
+          <div class="projects-search-wrap">
+            <svg class="search-svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input 
+              type="search" 
+              id="projectSearchInput" 
+              class="projects-search-input" 
+              placeholder="Search projects by keyword, technology, or sector..." 
+              aria-label="Search projects"
+              autocomplete="off"
+            >
+          </div>
+
+          <div class="projects-filter-rail" role="tablist" aria-label="Filter projects by category">
+            <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects (6)</button>
+            <button type="button" class="filter-btn" data-filter="business-software" role="tab" aria-selected="false">Business Software (2)</button>
+            <button type="button" class="filter-btn" data-filter="web-apps" role="tab" aria-selected="false">Web Applications (2)</button>
+            <button type="button" class="filter-btn" data-filter="websites" role="tab" aria-selected="false">Websites (1)</button>
+            <button type="button" class="filter-btn" data-filter="other-it" role="tab" aria-selected="false">Other IT Solutions (1)</button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Interactive Projects Gallery -->
-    <section class="section pt-0">
+    <!-- Projects Grid Section -->
+    <section class="projects-grid-section pt-0">
       <div class="container">
-        <!-- Search and Filter Bar -->
-        <div class="search-filter-bar">
-          <!-- Live Search Input -->
-          <div class="search-input-wrap">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"/>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            <input type="search" id="projectSearchInput" placeholder="Search projects by keyword, technology, or category..." aria-label="Search projects">
-          </div>
-
-          <!-- Category Filter Buttons -->
-          <div class="project-filters" role="group" aria-label="Filter projects by category">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="business-software">Business Software</button>
-            <button class="filter-btn" data-filter="web-apps">Web Applications</button>
-            <button class="filter-btn" data-filter="websites">Websites</button>
-            <button class="filter-btn" data-filter="other-it">Other IT Solutions</button>
-          </div>
-        </div>
-
         <!-- Dynamic Projects Grid (Populated by js/projects-data.js) -->
         <div class="projects-grid" id="projectsGallery" aria-live="polite">
           <!-- Projects rendered dynamically via JavaScript -->
@@ -253,7 +256,7 @@
         <!-- Verification Notice -->
         <div class="portfolio-notice-box">
           <p>
-            <strong>Verification Note:</strong> We value complete transparency. All displayed case studies reflect real-world architectures and implementations engineered by our technical team. To request a live walkthrough or discuss a customized implementation for your organization, reach out to our team directly.
+            <strong>Engineering Transparency:</strong> All displayed case studies reflect real-world architectures engineered by our technical team. To request a live demonstration or customized scope proposal, contact our team directly.
           </p>
         </div>
       </div>

@@ -17,6 +17,7 @@
   function initApp() {
     initStickyHeader();
     initMobileNav();
+    initDropdownNav();
     initScrollToTop();
     initDynamicYear();
     setActiveNavLink();
@@ -204,6 +205,158 @@
   /**
    * Back to top button
    */
+    /**
+   * Enterprise-Grade Dropdown Navigation
+   * Supports Desktop Click & Hover with debounced intent bridge,
+   * mobile drawer integration, keyboard accessibility, outside click,
+   * and link selection dismissal.
+   */
+  function initDropdownNav() {
+    const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+    if (!dropdowns.length) return;
+
+    dropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      const menu = dropdown.querySelector('.dropdown-menu');
+      if (!toggle || !menu) return;
+
+      let closeTimer = null;
+
+      const openDropdown = () => {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+        dropdown.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true');
+      };
+
+      const closeDropdown = (immediate = false) => {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+        if (immediate) {
+          dropdown.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        } else {
+          closeTimer = setTimeout(() => {
+            dropdown.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }, 220);
+        }
+      };
+
+      // 1. Toggle on Click (both Desktop & Mobile)
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = dropdown.classList.contains('is-open');
+        if (isOpen) {
+          closeDropdown(true);
+        } else {
+          dropdowns.forEach(other => {
+            if (other !== dropdown) {
+              other.classList.remove('is-open');
+              const otherToggle = other.querySelector('.dropdown-toggle');
+              if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+            }
+          });
+          openDropdown();
+        }
+      });
+
+      // 2. Desktop Mouse Events with Intent Bridge
+      dropdown.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 1024) {
+          openDropdown();
+        }
+      });
+
+      dropdown.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 1024) {
+          closeDropdown(false);
+        }
+      });
+
+      menu.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 1024) {
+          openDropdown();
+        }
+      });
+
+      menu.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 1024) {
+          closeDropdown(false);
+        }
+      });
+
+      // 3. Close immediately when any link inside dropdown is selected
+      const links = menu.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          closeDropdown(true);
+          const navMenu = document.querySelector('.nav-menu');
+          const hamburger = document.querySelector('.hamburger-btn');
+          if (navMenu && navMenu.classList.contains('is-open') && window.innerWidth <= 1024) {
+            navMenu.classList.remove('is-open');
+            if (hamburger) {
+              hamburger.setAttribute('aria-expanded', 'false');
+              const icon = hamburger.querySelector('svg');
+              if (icon) {
+                icon.innerHTML = '<path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+              }
+            }
+            document.body.style.overflow = '';
+          }
+        });
+      });
+
+      // 4. Keyboard Navigation
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openDropdown();
+          const firstLink = menu.querySelector('a');
+          if (firstLink) firstLink.focus();
+        }
+      });
+
+      menu.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          closeDropdown(true);
+          toggle.focus();
+        }
+      });
+    });
+
+    // 5. Global Document Listeners: Outside click & Escape
+    document.addEventListener('click', (e) => {
+      dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('is-open');
+          const toggle = dropdown.querySelector('.dropdown-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        dropdowns.forEach(dropdown => {
+          if (dropdown.classList.contains('is-open')) {
+            dropdown.classList.remove('is-open');
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            if (toggle) {
+              toggle.setAttribute('aria-expanded', 'false');
+              toggle.focus();
+            }
+          }
+        });
+      }
+    });
+  }
+
   function initScrollToTop() {
     const scrollTopBtn = document.querySelector('.scroll-top-btn');
     if (!scrollTopBtn) return;

@@ -274,6 +274,12 @@
             if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
           }
+          const openDropdowns = document.querySelectorAll('.nav-item.dropdown.is-open');
+          openDropdowns.forEach(d => {
+            d.classList.remove('is-open');
+            const t = d.querySelector('.dropdown-toggle');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          });
         }
       });
     });

@@ -630,3 +630,236 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   Services Visual-First Responsive Rules
+   ========================================================================== */
+@media (max-width: 768px) {
+  .services-hero-section {
+    padding: 18px 0 14px 0;
+    margin-bottom: 20px;
+  }
+
+  .services-hero-headline {
+    font-size: 1.35rem;
+  }
+
+  .services-hero-lead {
+    font-size: 0.88rem;
+  }
+
+  .services-directory-bar {
+    padding: 12px 14px 8px;
+  }
+
+  .services-bar-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .services-compact-search {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .services-category-rail {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .services-category-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cat-pill {
+    flex-shrink: 0;
+    padding: 5px 11px;
+    font-size: 0.78rem;
+  }
+
+  .advait-service-card {
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-meta-status {
+    text-align: left;
+  }
+}
+
+
+/* ==========================================================================
+   ADVait Premium Hero Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 992px) {
+  .advait-hero-grid,
+  .inner-hero-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .advait-hero-visual,
+  .inner-hero-media {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .advait-inner-hero {
+    padding: 28px 0 24px 0;
+  }
+
+  .projects-filter-rail {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 2px 4px 8px 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    box-sizing: border-box;
+  }
+
+  .projects-filter-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-cat-pill,
+  .filter-btn {
+    flex-shrink: 0;
+  }
+}
+
+
+/* Leadership Responsive Adjustments */
+@media (max-width: 992px) {
+  .advait-leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .advait-leader-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  
+  .advait-leader-card {
+    padding: 20px 18px;
+  }
+  
+  .advait-leader-socials {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* Premium Services Directory Responsive Adjustments */
+@media (max-width: 900px) {
+  .services-hero-section {
+    padding: 36px 0 28px 0;
+  }
+  .services-bar-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .services-compact-search {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-hero-section {
+    padding: 28px 0 20px 0;
+  }
+  .services-hero-headline {
+    font-size: clamp(1.45rem, 5.2vw, 1.85rem);
+    text-wrap: balance;
+  }
+  .services-hero-lead {
+    font-size: 0.94rem;
+  }
+  .services-trust-pill {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+  .services-directory-bar {
+    padding: 16px 14px 12px;
+    border-radius: 12px;
+  }
+  .services-category-rail {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .services-category-rail::-webkit-scrollbar {
+    display: none;
+  }
+  .services-meta-status {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .advait-service-card {
+    padding: 18px 16px;
+    border-radius: 14px;
+  }
+  .advait-card-icon-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+  .advait-card-meta-wrap {
+    gap: 6px;
+  }
+  .advait-card-category {
+    font-size: 0.68rem;
+    padding: 2px 7px;
+  }
+}
+
+@media (max-width: 360px) {
+  .services-hero-headline {
+    font-size: 1.35rem;
+  }
+  .advait-card-num {
+    display: none;
+  }
+}
+
+/* Services Page Mobile Filter Rail Horizontal Scrolling & Overflow Protection */
+@media (max-width: 768px) {
+  .services-toolbar-card {
+    padding: 10px 12px 8px;
+  }
+  .services-search-box {
+    max-width: 100%;
+  }
+  .services-filter-rail {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .services-filter-rail::-webkit-scrollbar {
+    display: none;
+  }
+}

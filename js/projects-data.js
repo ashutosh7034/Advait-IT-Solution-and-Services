@@ -225,23 +225,19 @@ function createProjectCardMarkup(proj) {
     <article class="project-card" data-id="${proj.id}">
       <div class="project-thumb">
         <img src="${proj.image}" alt="${proj.title}" width="600" height="338" loading="lazy">
-        <span class="project-badge-status">${proj.status}</span>
         <span class="project-badge-category">${proj.categoryLabel}</span>
       </div>
       <div class="project-body">
-        <h3>${proj.title}</h3>
-        <p>${proj.summary}</p>
-        <div class="tech-tag-list">
+        <h3 class="project-title">${proj.title}</h3>
+        <p class="project-desc">${proj.summary}</p>
+        <div class="tech-tag-list" aria-label="Technologies used">
           ${proj.techStack.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
         </div>
         <div class="project-footer">
-          <button class="btn btn-secondary btn-sm view-project-btn" data-id="${proj.id}">
-            View Case Details
-            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          <button type="button" class="btn btn-primary btn-sm view-project-btn" data-id="${proj.id}" aria-label="View project details for ${proj.title}">
+            <span>View Project</span>
+            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
           </button>
-          <a href="contact.html?service=${proj.category}" class="btn btn-outline-primary btn-sm">
-            Discuss Similar
-          </a>
         </div>
       </div>
     </article>
