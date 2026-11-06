@@ -863,3 +863,30 @@
     display: none;
   }
 }
+
+/* Sanskrit Brand Identity Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-sanskrit-tagline {
+    flex-wrap: wrap;
+    padding: 6px 12px;
+    gap: 6px;
+    justify-content: center;
+  }
+  .about-sanskrit-kicker,
+  .services-sanskrit-kicker {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px 10px;
+    gap: 4px 6px;
+  }
+  .services-sanskrit-kicker .sanskrit-devanagari {
+    font-size: 0.82rem;
+  }
+  .services-sanskrit-kicker .sanskrit-trans {
+    font-size: 0.74rem;
+  }
+}

@@ -831,19 +831,43 @@
   }
 
   /**
-   * Handles direct URL hash navigation (e.g. services.html#cybersecurity or legacy #security)
+   * Handles direct URL hash navigation and in-page dropdown jumps
    */
+  const ID_ALIASES = {
+    'hosting-server': 'hosting-domain',
+    'testing-qa': 'qa-testing',
+    'security': 'cybersecurity',
+    'api-db': 'api-database',
+    'seo': 'seo-optimization',
+    'additional-digital': 'digital-services'
+  };
+
+  function scrollToCard(targetCard, updateHash = false, hashId = '') {
+    if (!targetCard) return;
+    const header = document.querySelector('.site-header');
+    const announcement = document.querySelector('.announcement-strip');
+    const offset = (header ? header.offsetHeight : 68) + (announcement ? announcement.offsetHeight : 38) + 20;
+    const targetTop = targetCard.getBoundingClientRect().top + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: 'smooth'
+    });
+
+    if (updateHash && hashId && window.location.hash !== `#${hashId}`) {
+      history.pushState(null, '', `#${hashId}`);
+    }
+
+    targetCard.classList.add('card-highlighted');
+    setTimeout(() => {
+      targetCard.classList.remove('card-highlighted');
+    }, 2500);
+  }
+
   function handleInitialHash() {
     let hash = window.location.hash ? window.location.hash.substring(1) : '';
     if (!hash) return;
 
-    const ID_ALIASES = {
-      'hosting-server': 'hosting-domain',
-      'testing-qa': 'qa-testing',
-      'security': 'cybersecurity',
-      'api-db': 'api-database',
-      'seo': 'seo-optimization'
-    };
     if (ID_ALIASES[hash]) {
       hash = ID_ALIASES[hash];
     }
@@ -854,12 +878,35 @@
     resetAllFilters();
 
     setTimeout(() => {
-      targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      targetCard.classList.add('card-highlighted');
-      setTimeout(() => {
-        targetCard.classList.remove('card-highlighted');
-      }, 2500);
+      scrollToCard(targetCard, false, hash);
     }, 150);
   }
+
+  // Handle dropdown link clicks on the same page
+  document.querySelectorAll('.dropdown-link-card[href*="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href') || '';
+      const rawHash = href.includes('#') ? href.split('#')[1] : '';
+      if (!rawHash) return;
+
+      const hash = ID_ALIASES[rawHash] || rawHash;
+      const targetCard = document.getElementById(hash);
+      if (targetCard && targetCard.classList.contains('advait-service-card')) {
+        e.preventDefault();
+        resetAllFilters();
+        scrollToCard(targetCard, true, hash);
+
+        // Close mobile nav or open dropdown
+        document.querySelectorAll('.nav-item.dropdown.is-open').forEach(d => d.classList.remove('is-open'));
+        const navMenu = document.querySelector('.nav-menu');
+        if (navMenu && navMenu.classList.contains('is-open')) {
+          navMenu.classList.remove('is-open');
+          const hamburger = document.querySelector('.hamburger-btn');
+          if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+  });
 
 })();
