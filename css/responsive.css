@@ -739,11 +739,35 @@
 }
 
 
-/* Leadership Responsive Adjustments */
+/* Leadership Responsive Adjustments (3-Column -> 2-Column -> 1-Column) */
 @media (max-width: 992px) {
   .advait-leadership-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  
+  /* Remaining card displayed below with consistent sizing */
+  .advait-leadership-grid > .advait-leader-card:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: calc((100% - 24px) / 2);
+    justify-self: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .advait-leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  
+  .advait-leadership-grid > .advait-leader-card:nth-child(3) {
+    grid-column: auto;
+    max-width: 100%;
   }
 }
 
@@ -751,13 +775,18 @@
   .advait-leader-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 14px;
+    gap: 12px;
   }
   
   .advait-leader-card {
-    padding: 20px 18px;
+    padding: 22px 18px;
   }
   
+  .advait-leader-avatar-wrap {
+    width: 88px;
+    height: 88px;
+  }
+
   .advait-leader-socials {
     flex-wrap: wrap;
   }
