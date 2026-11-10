@@ -28,8 +28,10 @@ appHtmlFiles.forEach(file => {
 
   // Check footer email addresses on pages that contain full footers
   if (file !== '404.html') {
-    assert(content.includes('ashutosh3276s16@gmail.com'), `[${file}] Contains primary email (ashutosh3276s16@gmail.com)`);
-    assert(content.includes('akp2756097@gmail.com'), `[${file}] Contains secondary email (akp2756097@gmail.com)`);
+    assert(content.includes('infoadvaitit@gmail.com'), `[${file}] Contains official company email (infoadvaitit@gmail.com)`);
+    assert(!content.includes('ashutosh3276s16@gmail.com'), `[${file}] Free of personal email (ashutosh3276s16@gmail.com)`);
+    assert(!content.includes('akp2756097@gmail.com'), `[${file}] Free of personal email (akp2756097@gmail.com)`);
+    assert(!content.includes('janishm@gmail.com'), `[${file}] Free of personal email (janishm@gmail.com)`);
   }
 
   // Check on-disk assets
