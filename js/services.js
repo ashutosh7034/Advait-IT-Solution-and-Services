@@ -503,8 +503,8 @@
     initServicesFilter();
     initServicesSearch();
     initServiceModal();
-    handleInitialHash();
-    window.addEventListener('hashchange', handleInitialHash);
+    handleServiceInitialHash();
+    window.addEventListener('hashchange', handleServiceInitialHash);
   });
 
   /**
@@ -864,7 +864,7 @@
     }, 2500);
   }
 
-  function handleInitialHash() {
+  function handleServiceInitialHash() {
     let hash = window.location.hash ? window.location.hash.substring(1) : '';
     if (!hash) return;
 
